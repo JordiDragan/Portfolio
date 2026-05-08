@@ -216,6 +216,11 @@ window.addEventListener('resize', () => {
 // ============ SISTEMA DE IDIOMAS ============
 const DEFAULT_LANGUAGE = 'es';
 const LANGUAGES = ['es', 'en', 'ja'];
+const MENU_LABELS = {
+    es: 'Abrir menú',
+    en: 'Open menu',
+    ja: 'メニューを開く'
+};
 
 function getSavedLanguage() {
     return localStorage.getItem('language') || DEFAULT_LANGUAGE;
@@ -225,10 +230,20 @@ function saveLanguage(lang) {
     localStorage.setItem('language', lang);
 }
 
+function updateMenuToggleLabel(lang) {
+    const label = MENU_LABELS[lang] || MENU_LABELS[DEFAULT_LANGUAGE];
+
+    document.querySelectorAll('.menu-toggle').forEach(menuToggle => {
+        menuToggle.setAttribute('aria-label', label);
+        menuToggle.setAttribute('title', label);
+    });
+}
+
 async function loadLanguageContent(lang) {
     try {
         const file = lang === 'es' ? 'index.html' : `content-${lang}.html`;
         const mainContent = document.getElementById('main-content');
+        const nav = document.querySelector('nav');
 
         // Ocultar mientras carga
         mainContent.style.opacity = '0';
@@ -240,9 +255,18 @@ async function loadLanguageContent(lang) {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
         const newContent = doc.getElementById('main-content');
+        const newNav = doc.querySelector('nav');
+
+        if (newNav && nav) {
+            nav.innerHTML = newNav.innerHTML;
+        }
+
+        document.documentElement.lang = lang;
 
         mainContent.innerHTML = newContent ? newContent.innerHTML : html;
         reinitializeEventListeners();
+        updateActiveLangButton(lang);
+        updateMenuToggleLabel(lang);
 
         // Mostrar con fade-in suave
         requestAnimationFrame(() => {
@@ -297,6 +321,7 @@ function setLanguage(lang) {
     if (!LANGUAGES.includes(lang)) return;
     saveLanguage(lang);
     updateActiveLangButton(lang);
+    updateMenuToggleLabel(lang);
     loadLanguageContent(lang);
 }
 
