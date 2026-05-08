@@ -241,7 +241,6 @@ section {
 
 .proyecto-card {
     overflow: hidden;
-    cursor: pointer;
     animation: scaleIn 0.6s ease-out;
 }
 
@@ -272,6 +271,7 @@ section {
     image-rendering: -webkit-optimize-contrast;
     -ms-interpolation-mode: nearest-neighbor;
 }
+
 
 .proyecto-content {
     padding: 1.5rem;
@@ -349,11 +349,10 @@ section {
 .skill-item {
     text-align: center;
     padding: 1.5rem;
-    cursor: pointer;
+    cursor: default;
 }
 
 .skill-item:hover {
-    transform: translateY(-5px);
     border-color: var(--accent-blue);
     box-shadow: 0 10px 30px rgba(180, 124, 255, 0.16);
     background: var(--bg-tertiary);
