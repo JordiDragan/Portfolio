@@ -1,24 +1,22 @@
 // Menú hamburguesa responsive
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-
-menuToggle?.addEventListener('click', () => {
-    menuToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
+document.addEventListener('click', (e) => {
+    if (e.target.closest('.menu-toggle')) {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        menuToggle?.classList.toggle('active');
+        navLinks?.classList.toggle('active');
+    }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (event) {
         event.preventDefault();
-        menuToggle?.classList.remove('active');
-        navLinks?.classList.remove('active');
+        // Buscar en el momento del click, no al inicio
+        document.querySelector('.menu-toggle')?.classList.remove('active');
+        document.querySelector('.nav-links')?.classList.remove('active');
         const target = document.querySelector(this.getAttribute('href'));
-
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 });
@@ -213,4 +211,101 @@ document.querySelectorAll('.skills-grid').forEach(grid => {
 // Recalcular en resize (por ejemplo si cambia el ancho y el maxScroll)
 window.addEventListener('resize', () => {
     document.querySelectorAll('.skills-grid').forEach(updateArrowsForGrid);
+});
+
+// ============ SISTEMA DE IDIOMAS ============
+const DEFAULT_LANGUAGE = 'es';
+const LANGUAGES = ['es', 'en', 'ja'];
+
+function getSavedLanguage() {
+    return localStorage.getItem('language') || DEFAULT_LANGUAGE;
+}
+
+function saveLanguage(lang) {
+    localStorage.setItem('language', lang);
+}
+
+async function loadLanguageContent(lang) {
+    try {
+        const file = lang === 'es' ? 'index.html' : `content-${lang}.html`;
+        const mainContent = document.getElementById('main-content');
+
+        // Ocultar mientras carga
+        mainContent.style.opacity = '0';
+
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Failed to load ${file}`);
+        const html = await response.text();
+
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newContent = doc.getElementById('main-content');
+
+        mainContent.innerHTML = newContent ? newContent.innerHTML : html;
+        reinitializeEventListeners();
+
+        // Mostrar con fade-in suave
+        requestAnimationFrame(() => {
+            mainContent.style.transition = 'opacity 0.3s ease';
+            mainContent.style.opacity = '1';
+        });
+
+    } catch (error) {
+        console.error(`Error loading language content: ${error.message}`);
+        document.getElementById('main-content').style.opacity = '1';
+    }
+} 
+
+function reinitializeEventListeners() {
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (event) {
+            event.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Animaciones fade-in-up
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observerInstance.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+    // Drag-to-scroll
+    document.querySelectorAll('.skills-grid').forEach(grid => {
+        grid.addEventListener('scroll', () => updateArrowsForGrid(grid), { passive: true });
+        updateArrowsForGrid(grid);
+    });
+}
+
+function updateActiveLangButton(lang) {
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+}
+
+function setLanguage(lang) {
+    if (!LANGUAGES.includes(lang)) return;
+    saveLanguage(lang);
+    updateActiveLangButton(lang);
+    loadLanguageContent(lang);
+}
+
+// Delegación de eventos — funciona aunque los botones se reemplacen
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.lang-btn');
+    if (btn) setLanguage(btn.dataset.lang);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    setLanguage(getSavedLanguage());
 });
