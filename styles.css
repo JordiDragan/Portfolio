@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+/* Forzar que nunca haya overflow horizontal en móviles */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Asegurar que medios no desborden */
+img,
+picture,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 :root {
     --bg-primary: #1b1328;
     --bg-secondary: #261a38;
@@ -25,7 +43,28 @@ body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
     line-height: 1.6;
+}
+
+/* Contenedores principales deben evitar overflow horizontal */
+section,
+header,
+footer,
+.hero,
+.proyectos,
+.skills,
+.contacto {
     overflow-x: hidden;
+}
+
+nav {
+    width: 100%;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+.nav-links {
+    box-sizing: border-box;
 }
 
 nav {
@@ -962,11 +1001,12 @@ footer {
     }
 
     .language-selector {
-        position: absolute;
-        right: 80px;
-        top: 50%;
-        transform: translateY(-50%);
+        position: static;
+        right: auto;
+        top: auto;
+        transform: none;
         gap: 0.3rem;
+        align-items: center;
     }
 
     .lang-btn {
@@ -1072,6 +1112,32 @@ footer {
         left: 8px;
         right: auto;
     }
+
+    /* Móvil: mover el botón de menú a la izquierda y ocultar el logo/título */
+    nav {
+        padding: 1rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        order: 0;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .nav-logo {
+        order: 1;
+        display: none;
+    }
+
+    .nav-links {
+        order: 2;
+    }
+
+    .language-selector {
+        order: 3;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1084,16 +1150,18 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
-nav {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
-}
+@media (min-width: 769px) {
+    nav {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        align-items: center;
+    }
 
-.nav-links {
-    justify-self: center;
-}
+    .nav-links {
+        justify-self: center;
+    }
 
-.language-selector {
-    justify-self: end;
+    .language-selector {
+        justify-self: end;
+    }
 }
