@@ -37,6 +37,95 @@ document.querySelectorAll('.fade-in-up').forEach(element => {
     observer.observe(element);
 });
 
+const DRAG_DEMO_LABELS = {
+    es: 'Arrastra',
+    en: 'Drag',
+    ja: 'ドラッグ'
+};
+
+function setupSkillDragDemo() {
+    document.querySelectorAll('.skills-grid').forEach(grid => {
+        grid.classList.remove('drag-demo', 'is-dragging');
+        grid.removeAttribute('data-drag-label');
+        grid.querySelectorAll('img').forEach(img => {
+            img.setAttribute('draggable', 'false');
+        });
+    });
+
+    const firstGrid = document.querySelector('.skill-category:first-of-type .skills-grid');
+    if (!firstGrid) return;
+
+    const lang = (document.documentElement.lang || 'es').toLowerCase();
+    firstGrid.classList.add('drag-demo');
+    firstGrid.setAttribute('data-drag-label', DRAG_DEMO_LABELS[lang] || DRAG_DEMO_LABELS.es);
+}
+
+function setupSkillScrollbars() {
+    document.querySelectorAll('.skill-scrollbar').forEach(scrollbar => scrollbar.remove());
+
+    document.querySelectorAll('.skills-grid').forEach(grid => {
+        const existingScrollbar = grid.nextElementSibling;
+        if (existingScrollbar?.classList?.contains('skill-scrollbar')) {
+            existingScrollbar.remove();
+        }
+
+        const scrollbar = document.createElement('div');
+        scrollbar.className = 'skill-scrollbar';
+        scrollbar.setAttribute('aria-hidden', 'true');
+        scrollbar.innerHTML = '<div class="skill-scrollbar-thumb"></div>';
+
+        grid.insertAdjacentElement('afterend', scrollbar);
+        updateSkillScrollbar(grid, scrollbar);
+    });
+}
+
+function updateSkillScrollbar(grid, scrollbar = grid?.nextElementSibling) {
+    if (!grid || !scrollbar || !scrollbar.classList.contains('skill-scrollbar')) return;
+
+    const thumb = scrollbar.querySelector('.skill-scrollbar-thumb');
+    if (!thumb) return;
+
+    const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth);
+    const trackWidth = scrollbar.clientWidth;
+    const thumbWidth = maxScroll > 0
+        ? Math.max(36, Math.round(trackWidth * (grid.clientWidth / grid.scrollWidth)))
+        : trackWidth;
+    const maxThumbOffset = Math.max(0, trackWidth - thumbWidth);
+    const thumbOffset = maxScroll > 0
+        ? Math.round((grid.scrollLeft / maxScroll) * maxThumbOffset)
+        : 0;
+
+    thumb.style.width = `${thumbWidth}px`;
+    thumb.style.transform = `translateX(${thumbOffset}px)`;
+    scrollbar.classList.toggle('is-scrollable', maxScroll > 0);
+}
+
+function getGridFromSkillScrollbar(scrollbar) {
+    const grid = scrollbar?.previousElementSibling;
+    return grid?.classList?.contains('skills-grid') ? grid : null;
+}
+
+function scrollGridFromSkillScrollbar(scrollbar, clientX, thumbOffset = 0) {
+    const grid = getGridFromSkillScrollbar(scrollbar);
+    if (!grid) return;
+
+    const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth);
+    if (maxScroll === 0) return;
+
+    const thumb = scrollbar.querySelector('.skill-scrollbar-thumb');
+    const thumbWidth = thumb?.offsetWidth || 36;
+    const maxThumbOffset = Math.max(0, scrollbar.clientWidth - thumbWidth);
+    const scrollbarRect = scrollbar.getBoundingClientRect();
+    const targetThumbOffset = Math.min(
+        maxThumbOffset,
+        Math.max(0, clientX - scrollbarRect.left - thumbOffset)
+    );
+
+    grid.scrollLeft = (targetThumbOffset / maxThumbOffset) * maxScroll;
+    updateSkillScrollbar(grid, scrollbar);
+    updateArrowsForGrid(grid);
+}
+
 window.addEventListener('scroll', () => {
     let currentSection = '';
     const sections = document.querySelectorAll('section[id]');
@@ -61,12 +150,13 @@ let startX = 0;
 let scrollLeft = 0;
 let hasMovedWhileDragging = false;
 let dragGhost = null;
+let activeSkillScrollbar = null;
+let skillScrollbarThumbOffset = 0;
 
 document.addEventListener('mousedown', (e) => {
     const grid = e.target.closest('.skills-grid');
     if (!grid) return;
 
-    console.log('Mouse down en grid');
     activeGrid = grid;
     isDown = true;
     hasMovedWhileDragging = false;
@@ -92,6 +182,7 @@ document.addEventListener('mousedown', (e) => {
     document.body.appendChild(dragGhost);
     
     // Cambiar cursor del grid y todos los skill-items dentro
+    grid.classList.add('is-dragging');
     grid.style.setProperty('cursor', 'grabbing', 'important');
     grid.querySelectorAll('.skill-item').forEach(item => {
         item.style.setProperty('cursor', 'grabbing', 'important');
@@ -127,8 +218,7 @@ document.addEventListener('mousemove', (e) => {
 
 document.addEventListener('mouseup', (e) => {
     if (!activeGrid) return;
-    
-    console.log('Mouse up');
+
     if (hasMovedWhileDragging) {
         e.preventDefault();
     }
@@ -147,6 +237,7 @@ document.addEventListener('mouseup', (e) => {
     }
     
     // Volver a grab en todo
+    activeGrid.classList.remove('is-dragging');
     activeGrid.style.setProperty('cursor', 'grab', 'important');
     activeGrid.querySelectorAll('.skill-item').forEach(item => {
         item.style.setProperty('cursor', 'grab', 'important');
@@ -178,6 +269,53 @@ document.addEventListener('mouseover', (e) => {
     }
 }, true);
 
+document.addEventListener('pointerdown', (e) => {
+    const scrollbar = e.target.closest('.skill-scrollbar');
+    if (!scrollbar) return;
+
+    const grid = getGridFromSkillScrollbar(scrollbar);
+    if (!grid) return;
+
+    const thumb = scrollbar.querySelector('.skill-scrollbar-thumb');
+    const thumbRect = thumb?.getBoundingClientRect();
+    const isThumbTarget = Boolean(e.target.closest('.skill-scrollbar-thumb'));
+
+    activeSkillScrollbar = scrollbar;
+    skillScrollbarThumbOffset = isThumbTarget && thumbRect
+        ? e.clientX - thumbRect.left
+        : (thumb?.offsetWidth || 36) / 2;
+
+    scrollbar.classList.add('is-dragging');
+    document.body.style.userSelect = 'none';
+    scrollGridFromSkillScrollbar(scrollbar, e.clientX, skillScrollbarThumbOffset);
+    e.preventDefault();
+}, true);
+
+document.addEventListener('pointermove', (e) => {
+    if (!activeSkillScrollbar) return;
+
+    scrollGridFromSkillScrollbar(activeSkillScrollbar, e.clientX, skillScrollbarThumbOffset);
+    e.preventDefault();
+}, true);
+
+document.addEventListener('pointerup', () => {
+    if (!activeSkillScrollbar) return;
+
+    activeSkillScrollbar.classList.remove('is-dragging');
+    activeSkillScrollbar = null;
+    skillScrollbarThumbOffset = 0;
+    document.body.style.userSelect = '';
+}, true);
+
+document.addEventListener('pointercancel', () => {
+    if (!activeSkillScrollbar) return;
+
+    activeSkillScrollbar.classList.remove('is-dragging');
+    activeSkillScrollbar = null;
+    skillScrollbarThumbOffset = 0;
+    document.body.style.userSelect = '';
+}, true);
+
 document.addEventListener('mouseleave', (e) => {
     const grid = e.target.closest('.skills-grid');
     if (!grid || isDown) return; // No cambiar cursor si estamos arrastrando
@@ -203,14 +341,21 @@ function updateArrowsForGrid(grid) {
 // Añadir listeners a cada grid y ejecutar comprobación inicial
 document.querySelectorAll('.skills-grid').forEach(grid => {
     // comprobar al hacer scroll
-    grid.addEventListener('scroll', () => updateArrowsForGrid(grid), { passive: true });
+    grid.addEventListener('scroll', () => {
+        updateArrowsForGrid(grid);
+        updateSkillScrollbar(grid);
+    }, { passive: true });
     // comprobación inicial
     updateArrowsForGrid(grid);
 });
 
+setupSkillDragDemo();
+setupSkillScrollbars();
+
 // Recalcular en resize (por ejemplo si cambia el ancho y el maxScroll)
 window.addEventListener('resize', () => {
     document.querySelectorAll('.skills-grid').forEach(updateArrowsForGrid);
+    document.querySelectorAll('.skills-grid').forEach(grid => updateSkillScrollbar(grid));
 });
 
 // ============ SISTEMA DE IDIOMAS ============
@@ -306,9 +451,15 @@ function reinitializeEventListeners() {
 
     // Drag-to-scroll
     document.querySelectorAll('.skills-grid').forEach(grid => {
-        grid.addEventListener('scroll', () => updateArrowsForGrid(grid), { passive: true });
+        grid.addEventListener('scroll', () => {
+            updateArrowsForGrid(grid);
+            updateSkillScrollbar(grid);
+        }, { passive: true });
         updateArrowsForGrid(grid);
     });
+
+    setupSkillDragDemo();
+    setupSkillScrollbars();
 }
 
 function updateActiveLangButton(lang) {
@@ -333,4 +484,6 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(getSavedLanguage());
+    setupSkillDragDemo();
+    setupSkillScrollbars();
 });
