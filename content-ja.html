@@ -36,7 +36,7 @@
     <div id="main-content">
     <section class="hero" id="sobre-mi">
         <div class="hero-content">
-            <img src="Fotos/yo2.jpeg" alt="プロフィール写真" class="hero-image">
+            <img src="Fotos/yo2.png" alt="プロフィール写真" class="hero-image">
             <h1>Jordi Dragan</h1>
             <div class="title">ASIR 上級技術者</div>
             <p class="hero-text">
@@ -44,7 +44,7 @@
             </p>
             <div class="hero-actions">
                 <a href="#contacto" class="cta-button">お問い合わせ</a>
-                <a href="CV.pdf" class="cta-button" download="Jordi_Dragan_CV.pdf">CVをダウンロード</a>
+                <a href="./cv.pdf" class="cta-button" download="Jordi Dragan - CV.pdf">CVをダウンロード</a>
             </div>
         </div>
     </section>
@@ -165,7 +165,6 @@
 
     <section class="skills" id="skills">
         <h2 class="section-title">技術スキル</h2>
-        <div class="skills-hint">長押しして左右にドラッグ</div>
         <div class="skills-container">
             <div class="skill-category fade-in-up">
                 <h3 class="category-title">オペレーティングシステム</h3>
@@ -483,8 +482,16 @@
             <div class="timeline-item fade-in-up">
                 <div class="timeline-content">
                     <div class="timeline-title">中級職業訓練 – コンピューターシステム・ネットワーク</div>
-                    <div class="timeline-year">2018年9月 – 2021年7月</div>
+                    <div class="timeline-year">2022年9月 – 2024年7月</div>
                     <div class="timeline-description">IES Montsià</div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in-up">
+                <div class="timeline-content">
+                    <div class="timeline-title">Python 3 認定証</div>
+                    <div class="timeline-year">2023年11月</div>
+                    <div class="timeline-description">OpenWebinars</div>
                 </div>
             </div>
 
@@ -492,14 +499,6 @@
                 <div class="timeline-content">
                     <div class="timeline-title">疑似コードによるプログラミング入門コース</div>
                     <div class="timeline-year">2023年2月</div>
-                    <div class="timeline-description">OpenWebinars</div>
-                </div>
-            </div>
-
-            <div class="timeline-item fade-in-up">
-                <div class="timeline-content">
-                    <div class="timeline-title">OpenWebinars 奨学金オンボーディングコース</div>
-                    <div class="timeline-year">2022年12月</div>
                     <div class="timeline-description">OpenWebinars</div>
                 </div>
             </div>
@@ -513,30 +512,12 @@
             <p class="hero-text contact-desc">
                 ご連絡はメール、LinkedIn、または GitHub からお気軽にどうぞ。
             </p>
-            <div class="contacto-meta">
-                <article class="contacto-meta-card">
-                    <span class="contacto-meta-label">所在地</span>
-                    <p class="contacto-meta-text">アルカナル, 43530, タラゴナ（スペイン）</p>
-                </article>
-                <article class="contacto-meta-card">
-                    <span class="contacto-meta-label">言語</span>
-                    <ul class="contacto-meta-list">
-                        <li>スペイン語 · 母語</li>
-                        <li>カタルーニャ語 · 母語</li>
-                        <li>英語 · 中上級</li>
-                        <li>日本語 · 学習中</li>
-                    </ul>
-                </article>
+            <div class="contacto-email">
+                <div class="email-display">jordidrgn@gmail.com</div>
+                <button class="copy-email-btn" onclick="copyEmail(this)">コピー</button>
             </div>
+            <p class="copy-email-feedback" aria-live="polite"></p>
             <div class="contacto-links">
-                <a href="mailto:jordidrgn@gmail.com" class="contacto-link">
-                    <span class="contacto-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="img" focusable="false">
-                            <path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2-.5L12 12.4 19.8 6H4.2Zm15.8 1.6-7.3 6a1.1 1.1 0 0 1-1.4 0L4 7.6v9.9c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.6Z" />
-                        </svg>
-                    </span>
-                    メール
-                </a>
                 <a href="https://www.linkedin.com/in/jordidragan/" target="_blank" rel="noopener noreferrer" class="contacto-link">
                     <span class="contacto-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" role="img" focusable="false">

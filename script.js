@@ -37,29 +37,6 @@ document.querySelectorAll('.fade-in-up').forEach(element => {
     observer.observe(element);
 });
 
-const DRAG_DEMO_LABELS = {
-    es: 'Arrastra',
-    en: 'Drag',
-    ja: 'ドラッグ'
-};
-
-function setupSkillDragDemo() {
-    document.querySelectorAll('.skills-grid').forEach(grid => {
-        grid.classList.remove('drag-demo', 'is-dragging');
-        grid.removeAttribute('data-drag-label');
-        grid.querySelectorAll('img').forEach(img => {
-            img.setAttribute('draggable', 'false');
-        });
-    });
-
-    const firstGrid = document.querySelector('.skill-category:first-of-type .skills-grid');
-    if (!firstGrid) return;
-
-    const lang = (document.documentElement.lang || 'es').toLowerCase();
-    firstGrid.classList.add('drag-demo');
-    firstGrid.setAttribute('data-drag-label', DRAG_DEMO_LABELS[lang] || DRAG_DEMO_LABELS.es);
-}
-
 function setupSkillScrollbars() {
     document.querySelectorAll('.skill-scrollbar').forEach(scrollbar => scrollbar.remove());
 
@@ -79,6 +56,18 @@ function setupSkillScrollbars() {
     });
 }
 
+function bindSkillGridScrollListeners() {
+    document.querySelectorAll('.skills-grid').forEach(grid => {
+        if (grid.dataset.scrollListenerBound === 'true') return;
+
+        grid.addEventListener('scroll', () => {
+            updateSkillScrollbar(grid);
+        }, { passive: true });
+
+        grid.dataset.scrollListenerBound = 'true';
+    });
+}
+
 function updateSkillScrollbar(grid, scrollbar = grid?.nextElementSibling) {
     if (!grid || !scrollbar || !scrollbar.classList.contains('skill-scrollbar')) return;
 
@@ -88,15 +77,15 @@ function updateSkillScrollbar(grid, scrollbar = grid?.nextElementSibling) {
     const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth);
     const trackWidth = scrollbar.clientWidth;
     const thumbWidth = maxScroll > 0
-        ? Math.max(36, Math.round(trackWidth * (grid.clientWidth / grid.scrollWidth)))
+        ? Math.max(36, trackWidth * (grid.clientWidth / grid.scrollWidth))
         : trackWidth;
     const maxThumbOffset = Math.max(0, trackWidth - thumbWidth);
     const thumbOffset = maxScroll > 0
-        ? Math.round((grid.scrollLeft / maxScroll) * maxThumbOffset)
+        ? (grid.scrollLeft / maxScroll) * maxThumbOffset
         : 0;
 
     thumb.style.width = `${thumbWidth}px`;
-    thumb.style.transform = `translateX(${thumbOffset}px)`;
+    thumb.style.transform = `translate3d(${thumbOffset}px, 0, 0)`;
     scrollbar.classList.toggle('is-scrollable', maxScroll > 0);
 }
 
@@ -105,25 +94,80 @@ function getGridFromSkillScrollbar(scrollbar) {
     return grid?.classList?.contains('skills-grid') ? grid : null;
 }
 
-function scrollGridFromSkillScrollbar(scrollbar, clientX, thumbOffset = 0) {
+const skillScrollbarAnimations = new WeakMap();
+
+function cancelSkillScrollbarAnimation(grid) {
+    const animationFrameId = skillScrollbarAnimations.get(grid);
+    if (animationFrameId) {
+        window.cancelAnimationFrame(animationFrameId);
+        skillScrollbarAnimations.delete(grid);
+    }
+}
+
+function getTargetGridScrollFromScrollbar(scrollbar, clientX, thumbOffset = 0) {
     const grid = getGridFromSkillScrollbar(scrollbar);
-    if (!grid) return;
+    if (!grid) return null;
 
     const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth);
-    if (maxScroll === 0) return;
+    if (maxScroll === 0) return { grid, targetScrollLeft: 0 };
 
     const thumb = scrollbar.querySelector('.skill-scrollbar-thumb');
     const thumbWidth = thumb?.offsetWidth || 36;
     const maxThumbOffset = Math.max(0, scrollbar.clientWidth - thumbWidth);
+    if (maxThumbOffset === 0) return { grid, targetScrollLeft: grid.scrollLeft };
+
     const scrollbarRect = scrollbar.getBoundingClientRect();
     const targetThumbOffset = Math.min(
         maxThumbOffset,
         Math.max(0, clientX - scrollbarRect.left - thumbOffset)
     );
 
-    grid.scrollLeft = (targetThumbOffset / maxThumbOffset) * maxScroll;
-    updateSkillScrollbar(grid, scrollbar);
-    updateArrowsForGrid(grid);
+    return {
+        grid,
+        targetScrollLeft: (targetThumbOffset / maxThumbOffset) * maxScroll
+    };
+}
+
+function animateGridScrollTo(grid, targetScrollLeft, duration = 220) {
+    cancelSkillScrollbarAnimation(grid);
+
+    const from = grid.scrollLeft;
+    const change = targetScrollLeft - from;
+    if (Math.abs(change) < 0.5) {
+        grid.scrollLeft = targetScrollLeft;
+        return;
+    }
+
+    const startTime = performance.now();
+
+    const step = (currentTime) => {
+        const elapsed = currentTime - startTime;
+        const t = Math.min(1, elapsed / duration);
+        const eased = 1 - Math.pow(1 - t, 3); // ease-out cubic
+
+        grid.scrollLeft = from + (change * eased);
+
+        if (t < 1) {
+            const frameId = window.requestAnimationFrame(step);
+            skillScrollbarAnimations.set(grid, frameId);
+            return;
+        }
+
+        grid.scrollLeft = targetScrollLeft;
+        skillScrollbarAnimations.delete(grid);
+    };
+
+    const frameId = window.requestAnimationFrame(step);
+    skillScrollbarAnimations.set(grid, frameId);
+}
+
+function scrollGridFromSkillScrollbar(scrollbar, clientX, thumbOffset = 0) {
+    const target = getTargetGridScrollFromScrollbar(scrollbar, clientX, thumbOffset);
+    if (!target) return;
+
+    cancelSkillScrollbarAnimation(target.grid);
+    target.grid.scrollLeft = target.targetScrollLeft;
+    updateSkillScrollbar(target.grid, scrollbar);
 }
 
 window.addEventListener('scroll', () => {
@@ -143,130 +187,84 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// Scroll horizontal con arrastre del ratón
+// Scroll horizontal con arrastre fluido del raton (1:1 con el puntero)
 let activeGrid = null;
-let isDown = false;
-let startX = 0;
-let scrollLeft = 0;
+let isDraggingGrid = false;
 let hasMovedWhileDragging = false;
-let dragGhost = null;
+let gridDragStartX = 0;
+let gridStartScrollLeft = 0;
 let activeSkillScrollbar = null;
 let skillScrollbarThumbOffset = 0;
 
-document.addEventListener('mousedown', (e) => {
+document.addEventListener('pointerdown', (e) => {
+    if (e.button !== 0) return;
+
     const grid = e.target.closest('.skills-grid');
     if (!grid) return;
 
     activeGrid = grid;
-    isDown = true;
+    isDraggingGrid = true;
     hasMovedWhileDragging = false;
-    startX = e.pageX - grid.getBoundingClientRect().left;
-    scrollLeft = grid.scrollLeft;
-    
-    // Crear fantasma visual que sigue al ratón
-    dragGhost = document.createElement('div');
-    dragGhost.className = 'drag-ghost';
-    dragGhost.style.cssText = `
-        position: fixed;
-        pointer-events: none;
-        z-index: 10000;
-        opacity: 0.8;
-        border: 3px solid var(--accent-purple);
-        border-radius: 15px;
-        background: rgba(215, 166, 255, 0.15);
-        width: 150px;
-        height: 150px;
-        box-shadow: 0 0 30px rgba(215, 166, 255, 0.6), inset 0 0 20px rgba(215, 166, 255, 0.2);
-        will-change: transform;
-    `;
-    document.body.appendChild(dragGhost);
-    
-    // Cambiar cursor del grid y todos los skill-items dentro
+    gridDragStartX = e.clientX;
+    gridStartScrollLeft = grid.scrollLeft;
+
+    if (typeof grid.setPointerCapture === 'function') {
+        grid.setPointerCapture(e.pointerId);
+    }
+
     grid.classList.add('is-dragging');
-    grid.style.setProperty('cursor', 'grabbing', 'important');
-    grid.querySelectorAll('.skill-item').forEach(item => {
-        item.style.setProperty('cursor', 'grabbing', 'important');
-    });
+    document.body.style.userSelect = 'none';
     e.preventDefault();
-});
-
-document.addEventListener('mousemove', (e) => {
-    if (!isDown || !activeGrid) return;
-
-    e.preventDefault();
-    const x = e.pageX - activeGrid.getBoundingClientRect().left;
-    const walk = (x - startX) * 1.5;
-    
-    // Scroll suave con easing
-    activeGrid.scrollLeft = scrollLeft - walk;
-    
-    // Mover el fantasma al ratón con transformación suave
-    if (dragGhost) {
-        dragGhost.style.transform = `translate(calc(${e.pageX}px - 50%), calc(${e.pageY}px - 50%))`;
-    }
-    
-    // Mantener cursor grabbing en todo
-    activeGrid.style.setProperty('cursor', 'grabbing', 'important');
-    activeGrid.querySelectorAll('.skill-item').forEach(item => {
-        item.style.setProperty('cursor', 'grabbing', 'important');
-    });
-    
-    if (Math.abs(walk) > 5) {
-        hasMovedWhileDragging = true;
-    }
-});
-
-document.addEventListener('mouseup', (e) => {
-    if (!activeGrid) return;
-
-    if (hasMovedWhileDragging) {
-        e.preventDefault();
-    }
-    
-    // Eliminar fantasma con animación suave
-    if (dragGhost) {
-        dragGhost.style.transition = 'all 0.3s ease-out';
-        dragGhost.style.opacity = '0';
-        dragGhost.style.transform = 'translate(-50%, -50%) scale(0.5)';
-        setTimeout(() => {
-            if (dragGhost && dragGhost.parentNode) {
-                dragGhost.parentNode.removeChild(dragGhost);
-            }
-            dragGhost = null;
-        }, 300);
-    }
-    
-    // Volver a grab en todo
-    activeGrid.classList.remove('is-dragging');
-    activeGrid.style.setProperty('cursor', 'grab', 'important');
-    activeGrid.querySelectorAll('.skill-item').forEach(item => {
-        item.style.setProperty('cursor', 'grab', 'important');
-    });
-    
-    isDown = false;
-    activeGrid = null;
-});
-
-document.addEventListener('mouseenter', (e) => {
-    const grid = e.target.closest('.skills-grid');
-    if (!grid || isDown) return; // No cambiar cursor si estamos arrastrando
-    
-    grid.style.setProperty('cursor', 'grab', 'important');
-    grid.querySelectorAll('.skill-item').forEach(item => {
-        item.style.setProperty('cursor', 'grab', 'important');
-    });
 }, true);
 
-document.addEventListener('mouseover', (e) => {
-    // Mantener grab en cualquier elemento dentro del grid
-    const grid = e.target.closest('.skills-grid');
-    if (!grid || isDown) return;
-    
-    grid.style.setProperty('cursor', 'grab', 'important');
-    const skillItem = e.target.closest('.skill-item');
-    if (skillItem) {
-        skillItem.style.setProperty('cursor', 'grab', 'important');
+document.addEventListener('pointermove', (e) => {
+    if (!isDraggingGrid || !activeGrid) return;
+
+    const delta = e.clientX - gridDragStartX;
+    activeGrid.scrollLeft = gridStartScrollLeft - delta;
+
+    if (Math.abs(delta) > 3) {
+        hasMovedWhileDragging = true;
     }
+
+    e.preventDefault();
+}, true);
+
+function stopGridDragging(pointerId) {
+    if (!activeGrid) return;
+
+    if (typeof activeGrid.releasePointerCapture === 'function') {
+        try {
+            activeGrid.releasePointerCapture(pointerId);
+        } catch (_) {
+            // Ignorar si el puntero no estaba capturado por este elemento.
+        }
+    }
+
+    activeGrid.classList.remove('is-dragging');
+    activeGrid = null;
+    isDraggingGrid = false;
+    document.body.style.userSelect = '';
+}
+
+document.addEventListener('pointerup', (e) => {
+    stopGridDragging(e.pointerId);
+}, true);
+
+document.addEventListener('pointercancel', (e) => {
+    stopGridDragging(e.pointerId);
+}, true);
+
+// Evita clicks accidentales en tarjetas al terminar un drag.
+document.addEventListener('click', (e) => {
+    if (!hasMovedWhileDragging) return;
+
+    if (e.target.closest('.skills-grid')) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    hasMovedWhileDragging = false;
 }, true);
 
 document.addEventListener('pointerdown', (e) => {
@@ -279,6 +277,27 @@ document.addEventListener('pointerdown', (e) => {
     const thumb = scrollbar.querySelector('.skill-scrollbar-thumb');
     const thumbRect = thumb?.getBoundingClientRect();
     const isThumbTarget = Boolean(e.target.closest('.skill-scrollbar-thumb'));
+
+    if (!isThumbTarget) {
+        // Click en la pista: animacion hasta el punto clicado y dejar listo el drag continuo.
+        activeSkillScrollbar = scrollbar;
+        skillScrollbarThumbOffset = (thumb?.offsetWidth || 36) / 2;
+        scrollbar.classList.add('is-dragging');
+        document.body.style.userSelect = 'none';
+
+        const target = getTargetGridScrollFromScrollbar(
+            scrollbar,
+            e.clientX,
+            skillScrollbarThumbOffset
+        );
+
+        if (target) {
+            animateGridScrollTo(target.grid, target.targetScrollLeft);
+        }
+
+        e.preventDefault();
+        return;
+    }
 
     activeSkillScrollbar = scrollbar;
     skillScrollbarThumbOffset = isThumbTarget && thumbRect
@@ -316,45 +335,69 @@ document.addEventListener('pointercancel', () => {
     document.body.style.userSelect = '';
 }, true);
 
-document.addEventListener('mouseleave', (e) => {
-    const grid = e.target.closest('.skills-grid');
-    if (!grid || isDown) return; // No cambiar cursor si estamos arrastrando
-    
-    grid.style.cursor = 'auto';
-    grid.querySelectorAll('.skill-item').forEach(item => {
-        item.style.cursor = 'auto';
-    });
-}, true);
-
 // Actualizar visibilidad de las flechas según estado de scroll
-function updateArrowsForGrid(grid) {
-    if (!grid) return;
-    const maxScroll = Math.max(0, grid.scrollWidth - grid.clientWidth);
-    const parent = grid.closest('.skill-category');
-    if (!parent) return;
-    const leftAtStart = grid.scrollLeft <= 5;
-    const rightAtEnd = grid.scrollLeft >= (maxScroll - 5);
-    parent.classList.toggle('no-left', leftAtStart);
-    parent.classList.toggle('no-right', rightAtEnd);
+// Función para copiar el email al portapapeles
+function copyEmail(button) {
+    const email = 'jordidrgn@gmail.com';
+    const feedback = document.querySelector('.copy-email-feedback');
+    const language = (document.documentElement.lang || 'es').toLowerCase().slice(0, 2);
+    const buttonDefaultText = {
+        es: 'Copiar',
+        en: 'Copy',
+        ja: 'コピー'
+    };
+    const buttonSuccessText = {
+        es: 'Copiado',
+        en: 'Copied',
+        ja: 'コピー済み'
+    };
+    const messages = {
+        es: 'Correo copiado al portapapeles.',
+        en: 'Email copied to the clipboard.',
+        ja: 'メールをクリップボードにコピーしました。'
+    };
+    const successMessage = messages[language] || messages.es;
+
+    navigator.clipboard.writeText(email).then(() => {
+        if (button) {
+            button.classList.add('copied');
+            button.textContent = buttonSuccessText[language] || buttonSuccessText.es;
+        }
+
+        if (feedback) {
+            feedback.textContent = successMessage;
+            feedback.classList.add('is-visible');
+        }
+
+        window.clearTimeout(window.copyEmailFeedbackTimer);
+        window.copyEmailFeedbackTimer = window.setTimeout(() => {
+            if (button) {
+                button.classList.remove('copied');
+                button.textContent = buttonDefaultText[language] || buttonDefaultText.es;
+            }
+
+            if (feedback) {
+                feedback.classList.remove('is-visible');
+            }
+        }, 2000);
+    }).catch(err => {
+        console.error('Error al copiar:', err);
+        if (feedback) {
+            feedback.textContent = language === 'en'
+                ? 'Could not copy the email.'
+                : language === 'ja'
+                    ? 'メールをコピーできませんでした。'
+                    : 'No se ha podido copiar el correo.';
+            feedback.classList.add('is-visible');
+        }
+    });
 }
 
-// Añadir listeners a cada grid y ejecutar comprobación inicial
-document.querySelectorAll('.skills-grid').forEach(grid => {
-    // comprobar al hacer scroll
-    grid.addEventListener('scroll', () => {
-        updateArrowsForGrid(grid);
-        updateSkillScrollbar(grid);
-    }, { passive: true });
-    // comprobación inicial
-    updateArrowsForGrid(grid);
-});
-
-setupSkillDragDemo();
 setupSkillScrollbars();
+bindSkillGridScrollListeners();
 
 // Recalcular en resize (por ejemplo si cambia el ancho y el maxScroll)
 window.addEventListener('resize', () => {
-    document.querySelectorAll('.skills-grid').forEach(updateArrowsForGrid);
     document.querySelectorAll('.skills-grid').forEach(grid => updateSkillScrollbar(grid));
 });
 
@@ -449,17 +492,8 @@ function reinitializeEventListeners() {
 
     document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
 
-    // Drag-to-scroll
-    document.querySelectorAll('.skills-grid').forEach(grid => {
-        grid.addEventListener('scroll', () => {
-            updateArrowsForGrid(grid);
-            updateSkillScrollbar(grid);
-        }, { passive: true });
-        updateArrowsForGrid(grid);
-    });
-
-    setupSkillDragDemo();
     setupSkillScrollbars();
+    bindSkillGridScrollListeners();
 }
 
 function updateActiveLangButton(lang) {
@@ -484,6 +518,6 @@ document.addEventListener('click', (e) => {
 
 document.addEventListener('DOMContentLoaded', () => {
     setLanguage(getSavedLanguage());
-    setupSkillDragDemo();
     setupSkillScrollbars();
+    bindSkillGridScrollListeners();
 });

@@ -35,7 +35,7 @@
     <div id="main-content">
     <section class="hero" id="sobre-mi">
         <div class="hero-content">
-            <img src="Fotos/yo2.jpeg" alt="Perfil" class="hero-image">
+            <img src="Fotos/yo2.png" alt="Perfil" class="hero-image">
             <h1>Jordi Dragan</h1>
             <div class="title">Técnico Superior en ASIR</div>
             <p class="hero-text">
@@ -43,7 +43,7 @@
             </p>
             <div class="hero-actions">
                 <a href="#contacto" class="cta-button">Ponte en contacto</a>
-                <a href="Jordi Dragan - CV.pdf" class="cta-button" download="Jordi_Dragan_CV.pdf">Descargar CV</a>
+                <a href="./cv.pdf" class="cta-button" download="Jordi Dragan - CV.pdf">Descargar CV</a>
             </div>
         </div>
     </section>
@@ -116,7 +116,7 @@
             </div>
             <div class="proyecto-card fade-in-up">
                 <div class="proyecto-image">
-                    <img src="Fotos/ogcard.png" alt="High Seas Hackathon";>
+                    <img src="Fotos/ogcard.png" alt="High Seas Hackathon">
                 </div>
                 <div class="proyecto-content">
                     <h3 class="proyecto-title">High Seas Hackathon</h3>
@@ -162,7 +162,6 @@
 
     <section class="skills" id="skills">
         <h2 class="section-title">Skills Técnicos</h2>
-        <div class="skills-hint">Mantén pulsado y arrastra</div>
         <div class="skills-container">
             <div class="skill-category fade-in-up">
                 <h3 class="category-title">Sistemas Operativos</h3>
@@ -481,8 +480,16 @@
         <div class="timeline-item fade-in-up">
             <div class="timeline-content">
                 <div class="timeline-title">FP Medio Sistemas Informáticos y Redes</div>
-                <div class="timeline-year">Septiembre 2018 - Julio 2021</div>
+                <div class="timeline-year">Septiembre 2022 - Julio 2024</div>
                 <div class="timeline-description">IES Montsià</div>
+            </div>
+        </div>
+
+        <div class="timeline-item fade-in-up">
+            <div class="timeline-content">
+                <div class="timeline-title">Certificado Python 3</div>
+                <div class="timeline-year">Noviembre 2023</div>
+                <div class="timeline-description">OpenWebinars</div>
             </div>
         </div>
 
@@ -490,14 +497,6 @@
             <div class="timeline-content">
                 <div class="timeline-title">Curso de Introducción a la Programación con Pseudocódigo</div>
                 <div class="timeline-year">Febrero 2023</div>
-                <div class="timeline-description">OpenWebinars</div>
-            </div>
-        </div>
-
-        <div class="timeline-item fade-in-up">
-            <div class="timeline-content">
-                <div class="timeline-title">Curso de Onboarding Becas OpenWebinars</div>
-                <div class="timeline-year">Diciembre 2022</div>
                 <div class="timeline-description">OpenWebinars</div>
             </div>
         </div>
@@ -511,30 +510,12 @@
             <p class="hero-text contact-desc">
                 Si deseas ponerte en contacto conmigo, puedes enviarme un correo electrónico o encontrarme en LinkedIn o GitHub.
             </p>
-            <div class="contacto-meta">
-                <article class="contacto-meta-card">
-                    <span class="contacto-meta-label">Ubicación</span>
-                    <p class="contacto-meta-text">Alcanar, 43530, Tarragona</p>
-                </article>
-                <article class="contacto-meta-card">
-                    <span class="contacto-meta-label">Idiomas</span>
-                    <ul class="contacto-meta-list">
-                        <li>Español · Nativo</li>
-                        <li>Catalán · Nativo</li>
-                        <li>Inglés · Medio-Alto</li>
-                        <li>Japonés · Aprendiendo</li>
-                    </ul>
-                </article>
+            <div class="contacto-email">
+                <div class="email-display">jordidrgn@gmail.com</div>
+                <button class="copy-email-btn" onclick="copyEmail(this)">Copiar</button>
             </div>
+            <p class="copy-email-feedback" aria-live="polite"></p>
             <div class="contacto-links">
-                <a href="mailto:jordidrgn@gmail.com" class="contacto-link">
-                    <span class="contacto-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="img" focusable="false">
-                            <path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-15A2.5 2.5 0 0 1 2 17.5v-11Zm2.2-.5L12 12.4 19.8 6H4.2Zm15.8 1.6-7.3 6a1.1 1.1 0 0 1-1.4 0L4 7.6v9.9c0 .3.2.5.5.5h15c.3 0 .5-.2.5-.5V7.6Z" />
-                        </svg>
-                    </span>
-                    Email
-                </a>
                 <a href="https://www.linkedin.com/in/jordidragan/" target="_blank" rel="noopener noreferrer" class="contacto-link">
                     <span class="contacto-icon" aria-hidden="true">
                         <svg viewBox="0 0 24 24" role="img" focusable="false">
