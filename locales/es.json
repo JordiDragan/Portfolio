@@ -1,0 +1,386 @@
+{
+    "title": "Jordi Dragan - Portfolio",
+    "lang": "es",
+    "menuLabel": "Abrir menú",
+    "brand": "JORDIDRAGAN.DEV",
+    "nav": {
+        "about": "Sobre mí",
+        "projects": "Proyectos",
+        "skills": "Skills",
+        "experience": "Experiencia",
+        "education": "Estudios",
+        "contact": "Contacto"
+    },
+    "hero": {
+        "imageAlt": "Perfil",
+        "name": "Jordi Dragan",
+        "title": "Técnico Superior en ASIR",
+        "description": "Administrador de sistemas, redes e infraestructura IT con experiencia práctica en entornos exigentes. Me impulsa la resolución de problemas complejos y el aprendizaje constante, adaptándome rápidamente a nuevas tecnologías y entornos de trabajo.",
+        "contact": "Ponte en contacto",
+        "downloadcv": "Descargar CV"
+    },
+    "projects": {
+        "title": "Proyectos",
+        "items": [
+            {
+                "image": {
+                    "src": "Fotos/raspberry.jpeg",
+                    "alt": "Servidor propio Raspberry Pi"
+                },
+                "title": "HomeLab Pi",
+                "description": "Configuración de servidor personal con Raspberry Pi, implementando contenedores Docker y servicios web con Nginx Proxy Manager y base de datos MariaDB.",
+                "badges": [
+                    "Raspberry Pi",
+                    "Linux",
+                    "Docker",
+                    "Nginx",
+                    "MariaDB",
+                    "Proxy Inverso",
+                    "Autodidacta",
+                    "Aplicaciones web",
+                    "VPN"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/iemhosting.png",
+                    "alt": "Simulación empresa de hosting"
+                },
+                "title": "Simulación empresa de hosting y VPS",
+                "description": "Simulación completa de infraestructura de empresa de hosting con configuración de VLANs, firewall, routing y virtualización con Proxmox.",
+                "badges": [
+                    "Cisco",
+                    "VLAN",
+                    "Routing",
+                    "Firewall",
+                    "Mikrotik",
+                    "Active Directory",
+                    "VPN",
+                    "Proxmox",
+                    "Trabajo en equipo",
+                    "Comunicación",
+                    "DNS",
+                    "DHCP",
+                    "Atención al cliente",
+                    "Aplicaciones web"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/background.gif",
+                    "alt": "Juice Game Jam",
+                    "style": "image-rendering: pixelated;"
+                },
+                "title": "Juice Game Jam",
+                "description": "Desarrollo de videojuego en una Game Jam con 100 horas de trabajo con un viaje financiado a Shanghái (China)",
+                "badges": [
+                    "Godot",
+                    "GDScript",
+                    "Trabajo en equipo",
+                    "Creatividad",
+                    "Gestión del tiempo"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/ogcard.png",
+                    "alt": "High Seas Hackathon"
+                },
+                "title": "High Seas Hackathon",
+                "description": "Un hackaton con más de 100 horas de programación en el que experimenté con diversas tecnologías como desarrollo de videojuegos, desarrollo web y Python",
+                "badges": [
+                    "Python",
+                    "IA",
+                    "Godot",
+                    "GDScript",
+                    "HTML",
+                    "JavaScript",
+                    "CSS",
+                    "C#",
+                    "API",
+                    "Cosmos"
+                ]
+            },
+            {
+                "image": {
+                    "src": "https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png",
+                    "alt": "CanSat"
+                },
+                "title": "CanSat",
+                "description": "Un proyecto de desarrollo de un mini satélite del tamaño de una lata para recopilar datos atmosféricos y radiación UV",
+                "badges": [
+                    "Arduino",
+                    "C++",
+                    "Arduino IDE",
+                    "Electrónica",
+                    "Sensores",
+                    "Soldadura",
+                    "Modelado 3D",
+                    "Modulos",
+                    "Adafruit",
+                    "Trabajo en equipo",
+                    "Python"
+                ]
+            }
+        ]
+    },
+    "skills": {
+        "title": "Skills Técnicos",
+        "categories": [
+            {
+                "title": "Sistemas Operativos",
+                "gridClass": "os-grid",
+                "items": [
+                    {
+                        "label": "Linux",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/960px-Icons8_flat_linux.svg.png"
+                    },
+                    {
+                        "label": "Windows Server",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png"
+                    },
+                    {
+                        "label": "Active Directory",
+                        "icon": "https://cdn.freebiesupply.com/logos/large/2x/azure-active-directory-logo-svg-vector.svg"
+                    },
+                    {
+                        "label": "Fedora",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Fedora_icon_%282021%29.svg/960px-Fedora_icon_%282021%29.svg.png"
+                    },
+                    {
+                        "label": "Ubuntu Server",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Ubuntu.svg"
+                    },
+                    {
+                        "label": "Raspberry Pi OS",
+                        "icon": "https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/raspberry-pi-logo_resized_256.png"
+                    },
+                    {
+                        "label": "Terminal",
+                        "icon": "https://sw.kovidgoyal.net/kitty/_static/kitty.svg"
+                    }
+                ]
+            },
+            {
+                "title": "Virtualización y Contenedores",
+                "items": [
+                    {
+                        "label": "Docker",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png"
+                    },
+                    {
+                        "label": "Kubernetes",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kubernetes-icon.png"
+                    },
+                    {
+                        "label": "Proxmox",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png"
+                    },
+                    {
+                        "label": "VMWare",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/960px-Vmware_workstation_16_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200923084801"
+                    },
+                    {
+                        "label": "VirtualBox",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/VirtualBox_2024_Logo.svg/1280px-VirtualBox_2024_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "QEMU",
+                        "icon": "https://images.icon-icons.com/2699/PNG/512/qemu_logo_icon_169821.png"
+                    }
+                ]
+            },
+            {
+                "title": "Redes y Firewall",
+                "items": [
+                    {
+                        "label": "Cisco",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "Mikrotik",
+                        "icon": "https://data-discourse.cdn.mikrotik.com/App_Winbox.webp"
+                    },
+                    {
+                        "label": "Routing",
+                        "icon": "https://api.iconify.design/lucide:route.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "Switching",
+                        "icon": "https://api.iconify.design/lucide:network.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "Ubiquiti Unifi",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ubiquiti-unifi.png"
+                    },
+                    {
+                        "label": "WireGuard",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireguard.png"
+                    },
+                    {
+                        "label": "WireShark",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireshark.png"
+                    }
+                ]
+            },
+            {
+                "title": "Servidores Web",
+                "items": [
+                    {
+                        "label": "Apache",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Apache.svg"
+                    },
+                    {
+                        "label": "Nginx Proxy Manager",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nginx-proxy-manager.png"
+                    },
+                    {
+                        "label": "MySQL",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png"
+                    },
+                    {
+                        "label": "Mail",
+                        "icon": "https://nextcloud.com/c/uploads/2023/11/Roundcube-Logo-Icon-300x300.png"
+                    },
+                    {
+                        "label": "DNS",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Technitium_DNS_Server.png"
+                    },
+                    {
+                        "label": "GLPI",
+                        "icon": "https://www.tecnicascompetitivas.com/wp-content/uploads/2024/10/icon-glpi.png"
+                    },
+                    {
+                        "label": "FreePBX",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                    },
+                    {
+                        "label": "Squid Proxy",
+                        "icon": "https://elpuig.xeill.net/Members/vcarceler/articulos/squid/squid-logo.webp/@@images/92f66de1-ad52-4a24-a850-eefe7c05ce39.png"
+                    },
+                    {
+                        "label": "WordPress",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/174/174881.png"
+                    }
+                ]
+            },
+            {
+                "title": "Scripting y Programación",
+                "items": [
+                    {
+                        "label": "Bash",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/960px-Bash_Logo_Colored.svg.png"
+                    },
+                    {
+                        "label": "Python",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "PowerShell",
+                        "icon": "https://cdn.iconscout.com/icon/free/png-256/free-potencia-shell-logo-icon-svg-download-png-2945093.png"
+                    },
+                    {
+                        "label": "Ansible",
+                        "icon": "https://cdn.simpleicons.org/ansible/FFFFFF"
+                    },
+                    {
+                        "label": "GDScript",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                    }
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "title": "Experiencia Laboral",
+        "items": [
+            {
+                "title": "Técnico Informático (Prácticas)",
+                "company": "Informàtica Ràpita",
+                "dates": "Junio - Julio 2025",
+                "tasks": [
+                    "Atención al cliente",
+                    "Revisión y reparación de maquinaria informática",
+                    "Resolución de problemas de clientes",
+                    "Instalación de antenas y cámaras"
+                ]
+            },
+            {
+                "title": "Técnico Informático (Prácticas)",
+                "company": "St Augustine College, Malta",
+                "dates": "Marzo - Mayo 2025",
+                "tasks": [
+                    "Preparación de ordenadores para alumnos",
+                    "Reparación de ordenadores",
+                    "Instalación de suites ofimáticas",
+                    "Gestión de Active Directory"
+                ]
+            },
+            {
+                "title": "Diseñador Web en WordPress (Prácticas)",
+                "company": "Picture Perfect Malta",
+                "dates": "Febrero - Marzo 2024",
+                "tasks": [
+                    "Diseño de páginas web con WordPress para empresas",
+                    "Administración y mantenimiento de webs"
+                ]
+            },
+            {
+                "title": "Técnico Informático (Prácticas)",
+                "company": "IES Sól de Riu",
+                "dates": "Octubre 2023 - Abril 2024",
+                "tasks": [
+                    "Resolución de problemas de alumnos y profesores",
+                    "Reparación y mantenimiento de equipos informáticos",
+                    "Soporte técnico"
+                ]
+            }
+        ]
+    },
+    "education": {
+        "title": "Educación",
+        "items": [
+            {
+                "title": "FP Superior Administración de Sistemas Informáticos en Red",
+                "year": "Septiembre 2024 - Mayo 2026",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "FP Medio Sistemas Informáticos y Redes",
+                "year": "Septiembre 2022 - Julio 2024",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "Certificado Python 3",
+                "year": "Noviembre 2023",
+                "description": "OpenWebinars"
+            },
+            {
+                "title": "Curso de Introducción a la Programación con Pseudocódigo",
+                "year": "Febrero 2023",
+                "description": "OpenWebinars"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contacto",
+        "description": "Si deseas ponerte en contacto conmigo, puedes enviarme un correo electrónico o encontrarme en LinkedIn o GitHub.",
+        "email": "jordidrgn@gmail.com",
+        "copyButton": "Copiar",
+        "copiedButton": "Copiado",
+        "copySuccess": "Correo copiado al portapapeles.",
+        "copyError": "No se ha podido copiar el correo.",
+        "links": [
+            {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/jordidragan/",
+                "icon": "linkedin"
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/JordiDragan",
+                "icon": "github"
+            }
+        ]
+    }
+}

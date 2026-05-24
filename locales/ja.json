@@ -1,0 +1,386 @@
+{
+    "title": "Jordi Dragan - ポートフォリオ",
+    "lang": "ja",
+    "menuLabel": "メニューを開く",
+    "brand": "JORDIDRAGAN.DEV",
+    "nav": {
+        "about": "自己紹介",
+        "projects": "プロジェクト",
+        "skills": "スキル",
+        "experience": "職務経歴",
+        "education": "学歴",
+        "contact": "お問い合わせ"
+    },
+    "hero": {
+        "imageAlt": "プロフィール写真",
+        "name": "Jordi Dragan",
+        "title": "ASIR 上級技術者",
+        "description": "要求の高い環境での実務経験を持つ、システム・ネットワーク・ITインフラ管理者です。複雑な問題の解決と継続的な学習に情熱を持ち、新しい技術や作業環境に迅速に適応します。",
+        "contact": "お問い合わせ",
+        "downloadcv": "CVをダウンロード"
+    },
+    "projects": {
+        "title": "プロジェクト",
+        "items": [
+            {
+                "image": {
+                    "src": "Fotos/raspberry.jpeg",
+                    "alt": "Raspberry Pi 個人サーバー"
+                },
+                "title": "HomeLab Pi",
+                "description": "Raspberry Pi を使用した個人サーバーの構築。Docker コンテナ、Nginx Proxy Manager、および MariaDB データベースを用いた Web サービスを実装。",
+                "badges": [
+                    "Raspberry Pi",
+                    "Linux",
+                    "Docker",
+                    "Nginx",
+                    "MariaDB",
+                    "リバースプロキシ",
+                    "独学",
+                    "Webアプリケーション",
+                    "VPN"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/iemhosting.png",
+                    "alt": "ホスティング会社のシミュレーション"
+                },
+                "title": "ホスティング・VPS 企業シミュレーション",
+                "description": "VLAN 設定、ファイアウォール、ルーティング、Proxmox による仮想化を含む、ホスティング企業の完全なインフラシミュレーション。",
+                "badges": [
+                    "Cisco",
+                    "VLAN",
+                    "ルーティング",
+                    "ファイアウォール",
+                    "Mikrotik",
+                    "Active Directory",
+                    "VPN",
+                    "Proxmox",
+                    "チームワーク",
+                    "コミュニケーション",
+                    "DNS",
+                    "DHCP",
+                    "カスタマーサポート",
+                    "Webアプリケーション"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/background.gif",
+                    "alt": "Juice Game Jam",
+                    "style": "image-rendering: pixelated;"
+                },
+                "title": "Juice Game Jam",
+                "description": "ゲームジャムで 100 時間かけて開発したビデオゲーム。上海（中国）への渡航費用が支給されました。",
+                "badges": [
+                    "Godot",
+                    "GDScript",
+                    "チームワーク",
+                    "創造性",
+                    "時間管理"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/ogcard.png",
+                    "alt": "High Seas Hackathon"
+                },
+                "title": "High Seas ハッカソン",
+                "description": "100 時間以上のコーディングを行ったハッカソン。ゲーム開発、Web 開発、Python など多様な技術を実験・習得しました。",
+                "badges": [
+                    "Python",
+                    "AI",
+                    "Godot",
+                    "GDScript",
+                    "HTML",
+                    "JavaScript",
+                    "CSS",
+                    "C#",
+                    "API",
+                    "Cosmos"
+                ]
+            },
+            {
+                "image": {
+                    "src": "https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png",
+                    "alt": "CanSat"
+                },
+                "title": "CanSat",
+                "description": "缶サイズのミニ人工衛星の開発プロジェクト。大気データと紫外線放射の収集を目的としました。",
+                "badges": [
+                    "Arduino",
+                    "C++",
+                    "Arduino IDE",
+                    "電子工学",
+                    "センサー",
+                    "はんだ付け",
+                    "3Dモデリング",
+                    "モジュール",
+                    "Adafruit",
+                    "チームワーク",
+                    "Python"
+                ]
+            }
+        ]
+    },
+    "skills": {
+        "title": "技術スキル",
+        "categories": [
+            {
+                "title": "オペレーティングシステム",
+                "gridClass": "os-grid",
+                "items": [
+                    {
+                        "label": "Linux",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/960px-Icons8_flat_linux.svg.png"
+                    },
+                    {
+                        "label": "Windows Server",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png"
+                    },
+                    {
+                        "label": "Active Directory",
+                        "icon": "https://cdn.freebiesupply.com/logos/large/2x/azure-active-directory-logo-svg-vector.svg"
+                    },
+                    {
+                        "label": "Fedora",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Fedora_icon_%282021%29.svg/960px-Fedora_icon_%282021%29.svg.png"
+                    },
+                    {
+                        "label": "Ubuntu Server",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Ubuntu.svg"
+                    },
+                    {
+                        "label": "Raspberry Pi OS",
+                        "icon": "https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/raspberry-pi-logo_resized_256.png"
+                    },
+                    {
+                        "label": "ターミナル",
+                        "icon": "https://sw.kovidgoyal.net/kitty/_static/kitty.svg"
+                    }
+                ]
+            },
+            {
+                "title": "仮想化・コンテナ",
+                "items": [
+                    {
+                        "label": "Docker",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png"
+                    },
+                    {
+                        "label": "Kubernetes",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kubernetes-icon.png"
+                    },
+                    {
+                        "label": "Proxmox",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png"
+                    },
+                    {
+                        "label": "VMWare",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/960px-Vmware_workstation_16_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200923084801"
+                    },
+                    {
+                        "label": "VirtualBox",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/VirtualBox_2024_Logo.svg/1280px-VirtualBox_2024_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "QEMU",
+                        "icon": "https://images.icon-icons.com/2699/PNG/512/qemu_logo_icon_169821.png"
+                    }
+                ]
+            },
+            {
+                "title": "ネットワーク・ファイアウォール",
+                "items": [
+                    {
+                        "label": "Cisco",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "Mikrotik",
+                        "icon": "https://data-discourse.cdn.mikrotik.com/App_Winbox.webp"
+                    },
+                    {
+                        "label": "ルーティング",
+                        "icon": "https://api.iconify.design/lucide:route.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "スイッチング",
+                        "icon": "https://api.iconify.design/lucide:network.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "Ubiquiti Unifi",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ubiquiti-unifi.png"
+                    },
+                    {
+                        "label": "WireGuard",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireguard.png"
+                    },
+                    {
+                        "label": "WireShark",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireshark.png"
+                    }
+                ]
+            },
+            {
+                "title": "Web サーバー",
+                "items": [
+                    {
+                        "label": "Apache",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Apache.svg"
+                    },
+                    {
+                        "label": "Nginx Proxy Manager",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nginx-proxy-manager.png"
+                    },
+                    {
+                        "label": "MySQL",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png"
+                    },
+                    {
+                        "label": "メール",
+                        "icon": "https://nextcloud.com/c/uploads/2023/11/Roundcube-Logo-Icon-300x300.png"
+                    },
+                    {
+                        "label": "DNS",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Technitium_DNS_Server.png"
+                    },
+                    {
+                        "label": "GLPI",
+                        "icon": "https://www.tecnicascompetitivas.com/wp-content/uploads/2024/10/icon-glpi.png"
+                    },
+                    {
+                        "label": "FreePBX",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                    },
+                    {
+                        "label": "Squid Proxy",
+                        "icon": "https://elpuig.xeill.net/Members/vcarceler/articulos/squid/squid-logo.webp/@@images/92f66de1-ad52-4a24-a850-eefe7c05ce39.png"
+                    },
+                    {
+                        "label": "WordPress",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/174/174881.png"
+                    }
+                ]
+            },
+            {
+                "title": "スクリプト・プログラミング",
+                "items": [
+                    {
+                        "label": "Bash",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/960px-Bash_Logo_Colored.svg.png"
+                    },
+                    {
+                        "label": "Python",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "PowerShell",
+                        "icon": "https://cdn.iconscout.com/icon/free/png-256/free-potencia-shell-logo-icon-svg-download-png-2945093.png"
+                    },
+                    {
+                        "label": "Ansible",
+                        "icon": "https://cdn.simpleicons.org/ansible/FFFFFF"
+                    },
+                    {
+                        "label": "GDScript",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                    }
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "title": "職務経歴",
+        "items": [
+            {
+                "title": "IT技術者（インターンシップ）",
+                "company": "Informàtica Ràpita",
+                "dates": "2025年6月 – 7月",
+                "tasks": [
+                    "カスタマーサービス",
+                    "コンピューターハードウェアの点検・修理",
+                    "顧客の問題解決",
+                    "アンテナおよびカメラの設置"
+                ]
+            },
+            {
+                "title": "IT技術者（インターンシップ）",
+                "company": "St Augustine College、マルタ",
+                "dates": "2025年3月 – 5月",
+                "tasks": [
+                    "生徒用コンピューターの準備",
+                    "コンピューターの修理",
+                    "オフィスソフトウェアのインストール",
+                    "Active Directory の管理"
+                ]
+            },
+            {
+                "title": "WordPress Web デザイナー（インターンシップ）",
+                "company": "Picture Perfect Malta",
+                "dates": "2024年2月 – 3月",
+                "tasks": [
+                    "WordPress を使用した企業向け Web サイトのデザイン",
+                    "Web サイトの管理・保守"
+                ]
+            },
+            {
+                "title": "IT技術者（インターンシップ）",
+                "company": "IES Sól de Riu",
+                "dates": "2023年10月 – 2024年4月",
+                "tasks": [
+                    "生徒・教職員の問題解決",
+                    "コンピューター機器の修理・保守",
+                    "テクニカルサポート"
+                ]
+            }
+        ]
+    },
+    "education": {
+        "title": "学歴",
+        "items": [
+            {
+                "title": "上級職業訓練 – ネットワークコンピューターシステム管理",
+                "year": "2024年9月 – 2026年5月",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "中級職業訓練 – コンピューターシステム・ネットワーク",
+                "year": "2022年9月 – 2024年7月",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "Python 3 認定証",
+                "year": "2023年11月",
+                "description": "OpenWebinars"
+            },
+            {
+                "title": "疑似コードによるプログラミング入門コース",
+                "year": "2023年2月",
+                "description": "OpenWebinars"
+            }
+        ]
+    },
+    "contact": {
+        "title": "お問い合わせ",
+        "description": "ご連絡はメール、LinkedIn、または GitHub からお気軽にどうぞ。",
+        "email": "jordidrgn@gmail.com",
+        "copyButton": "コピー",
+        "copiedButton": "コピー済み",
+        "copySuccess": "メールをクリップボードにコピーしました。",
+        "copyError": "メールをコピーできませんでした。",
+        "links": [
+            {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/jordidragan/",
+                "icon": "linkedin"
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/JordiDragan",
+                "icon": "github"
+            }
+        ]
+    }
+}

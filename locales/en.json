@@ -1,0 +1,386 @@
+{
+    "title": "Jordi Dragan - Portfolio",
+    "lang": "en",
+    "menuLabel": "Open menu",
+    "brand": "JORDIDRAGAN.DEV",
+    "nav": {
+        "about": "About me",
+        "projects": "Projects",
+        "skills": "Skills",
+        "experience": "Experience",
+        "education": "Education",
+        "contact": "Contact"
+    },
+    "hero": {
+        "imageAlt": "Profile picture",
+        "name": "Jordi Dragan",
+        "title": "Higher Technician in ASIR",
+        "description": "Systems, network and IT infrastructure administrator with hands-on experience in demanding environments. Driven by solving complex problems and continuous learning, quickly adapting to new technologies and work environments.",
+        "contact": "Get in touch",
+        "downloadcv": "Download CV"
+    },
+    "projects": {
+        "title": "Projects",
+        "items": [
+            {
+                "image": {
+                    "src": "Fotos/raspberry.jpeg",
+                    "alt": "Personal Raspberry Pi server"
+                },
+                "title": "HomeLab Pi",
+                "description": "Personal server setup using a Raspberry Pi, implementing Docker containers and web services with Nginx Proxy Manager and a MariaDB database.",
+                "badges": [
+                    "Raspberry Pi",
+                    "Linux",
+                    "Docker",
+                    "Nginx",
+                    "MariaDB",
+                    "Reverse Proxy",
+                    "Self-taught",
+                    "Web Applications",
+                    "VPN"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/iemhosting.png",
+                    "alt": "Hosting company simulation"
+                },
+                "title": "Hosting & VPS Company Simulation",
+                "description": "Full infrastructure simulation of a hosting company including VLAN configuration, firewall, routing and virtualisation with Proxmox.",
+                "badges": [
+                    "Cisco",
+                    "VLAN",
+                    "Routing",
+                    "Firewall",
+                    "Mikrotik",
+                    "Active Directory",
+                    "VPN",
+                    "Proxmox",
+                    "Teamwork",
+                    "Communication",
+                    "DNS",
+                    "DHCP",
+                    "Customer Service",
+                    "Web Applications"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/background.gif",
+                    "alt": "Juice Game Jam",
+                    "style": "image-rendering: pixelated;"
+                },
+                "title": "Juice Game Jam",
+                "description": "Video game developed in a Game Jam with 100 hours of work and a funded trip to Shanghai (China).",
+                "badges": [
+                    "Godot",
+                    "GDScript",
+                    "Teamwork",
+                    "Creativity",
+                    "Time Management"
+                ]
+            },
+            {
+                "image": {
+                    "src": "Fotos/ogcard.png",
+                    "alt": "High Seas Hackathon"
+                },
+                "title": "High Seas Hackathon",
+                "description": "A hackathon with over 100 hours of coding where I experimented with various technologies including game development, web development and Python.",
+                "badges": [
+                    "Python",
+                    "AI",
+                    "Godot",
+                    "GDScript",
+                    "HTML",
+                    "JavaScript",
+                    "CSS",
+                    "C#",
+                    "API",
+                    "Cosmos"
+                ]
+            },
+            {
+                "image": {
+                    "src": "https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png",
+                    "alt": "CanSat"
+                },
+                "title": "CanSat",
+                "description": "Development of a mini satellite the size of a soda can to collect atmospheric data and UV radiation.",
+                "badges": [
+                    "Arduino",
+                    "C++",
+                    "Arduino IDE",
+                    "Electronics",
+                    "Sensors",
+                    "Soldering",
+                    "3D Modelling",
+                    "Modules",
+                    "Adafruit",
+                    "Teamwork",
+                    "Python"
+                ]
+            }
+        ]
+    },
+    "skills": {
+        "title": "Technical Skills",
+        "categories": [
+            {
+                "title": "Operating Systems",
+                "gridClass": "os-grid",
+                "items": [
+                    {
+                        "label": "Linux",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/960px-Icons8_flat_linux.svg.png"
+                    },
+                    {
+                        "label": "Windows Server",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png"
+                    },
+                    {
+                        "label": "Active Directory",
+                        "icon": "https://cdn.freebiesupply.com/logos/large/2x/azure-active-directory-logo-svg-vector.svg"
+                    },
+                    {
+                        "label": "Fedora",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Fedora_icon_%282021%29.svg/960px-Fedora_icon_%282021%29.svg.png"
+                    },
+                    {
+                        "label": "Ubuntu Server",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Ubuntu.svg"
+                    },
+                    {
+                        "label": "Raspberry Pi OS",
+                        "icon": "https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/raspberry-pi-logo_resized_256.png"
+                    },
+                    {
+                        "label": "Terminal",
+                        "icon": "https://sw.kovidgoyal.net/kitty/_static/kitty.svg"
+                    }
+                ]
+            },
+            {
+                "title": "Virtualisation & Containers",
+                "items": [
+                    {
+                        "label": "Docker",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png"
+                    },
+                    {
+                        "label": "Kubernetes",
+                        "icon": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kubernetes-icon.png"
+                    },
+                    {
+                        "label": "Proxmox",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png"
+                    },
+                    {
+                        "label": "VMWare",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/960px-Vmware_workstation_16_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200923084801"
+                    },
+                    {
+                        "label": "VirtualBox",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/VirtualBox_2024_Logo.svg/1280px-VirtualBox_2024_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "QEMU",
+                        "icon": "https://images.icon-icons.com/2699/PNG/512/qemu_logo_icon_169821.png"
+                    }
+                ]
+            },
+            {
+                "title": "Networking & Firewall",
+                "items": [
+                    {
+                        "label": "Cisco",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "Mikrotik",
+                        "icon": "https://data-discourse.cdn.mikrotik.com/App_Winbox.webp"
+                    },
+                    {
+                        "label": "Routing",
+                        "icon": "https://api.iconify.design/lucide:route.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "Switching",
+                        "icon": "https://api.iconify.design/lucide:network.svg?color=%23ffffff"
+                    },
+                    {
+                        "label": "Ubiquiti Unifi",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ubiquiti-unifi.png"
+                    },
+                    {
+                        "label": "WireGuard",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireguard.png"
+                    },
+                    {
+                        "label": "WireShark",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireshark.png"
+                    }
+                ]
+            },
+            {
+                "title": "Web Servers",
+                "items": [
+                    {
+                        "label": "Apache",
+                        "icon": "https://icon.icepanel.io/Technology/svg/Apache.svg"
+                    },
+                    {
+                        "label": "Nginx Proxy Manager",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nginx-proxy-manager.png"
+                    },
+                    {
+                        "label": "MySQL",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/5968/5968313.png"
+                    },
+                    {
+                        "label": "Mail",
+                        "icon": "https://nextcloud.com/c/uploads/2023/11/Roundcube-Logo-Icon-300x300.png"
+                    },
+                    {
+                        "label": "DNS",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Technitium_DNS_Server.png"
+                    },
+                    {
+                        "label": "GLPI",
+                        "icon": "https://www.tecnicascompetitivas.com/wp-content/uploads/2024/10/icon-glpi.png"
+                    },
+                    {
+                        "label": "FreePBX",
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                    },
+                    {
+                        "label": "Squid Proxy",
+                        "icon": "https://elpuig.xeill.net/Members/vcarceler/articulos/squid/squid-logo.webp/@@images/92f66de1-ad52-4a24-a850-eefe7c05ce39.png"
+                    },
+                    {
+                        "label": "WordPress",
+                        "icon": "https://cdn-icons-png.flaticon.com/512/174/174881.png"
+                    }
+                ]
+            },
+            {
+                "title": "Scripting & Programming",
+                "items": [
+                    {
+                        "label": "Bash",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/960px-Bash_Logo_Colored.svg.png"
+                    },
+                    {
+                        "label": "Python",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail"
+                    },
+                    {
+                        "label": "PowerShell",
+                        "icon": "https://cdn.iconscout.com/icon/free/png-256/free-potencia-shell-logo-icon-svg-download-png-2945093.png"
+                    },
+                    {
+                        "label": "Ansible",
+                        "icon": "https://cdn.simpleicons.org/ansible/FFFFFF"
+                    },
+                    {
+                        "label": "GDScript",
+                        "icon": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original"
+                    }
+                ]
+            }
+        ]
+    },
+    "experience": {
+        "title": "Work Experience",
+        "items": [
+            {
+                "title": "IT Technician (Internship)",
+                "company": "Informàtica Ràpita",
+                "dates": "June - July 2025",
+                "tasks": [
+                    "Customer service",
+                    "Review and repair of computer hardware",
+                    "Customer problem resolution",
+                    "Antenna and camera installation"
+                ]
+            },
+            {
+                "title": "IT Technician (Internship)",
+                "company": "St Augustine College, Malta",
+                "dates": "March - May 2025",
+                "tasks": [
+                    "Preparation of computers for students",
+                    "Computer repair",
+                    "Office suite installation",
+                    "Active Directory management"
+                ]
+            },
+            {
+                "title": "WordPress Web Designer (Internship)",
+                "company": "Picture Perfect Malta",
+                "dates": "February - March 2024",
+                "tasks": [
+                    "Web design with WordPress for businesses",
+                    "Website administration and maintenance"
+                ]
+            },
+            {
+                "title": "IT Technician (Internship)",
+                "company": "IES Sól de Riu",
+                "dates": "October 2023 - April 2024",
+                "tasks": [
+                    "Resolving issues for students and teachers",
+                    "Repair and maintenance of computer equipment",
+                    "Technical support"
+                ]
+            }
+        ]
+    },
+    "education": {
+        "title": "Education",
+        "items": [
+            {
+                "title": "Higher Vocational Training - Network Computer Systems Administration",
+                "year": "September 2024 - May 2026",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "Intermediate Vocational Training - Computer Systems and Networks",
+                "year": "September 2022 - July 2024",
+                "description": "IES Montsià"
+            },
+            {
+                "title": "Python 3 Certificate",
+                "year": "November 2023",
+                "description": "OpenWebinars"
+            },
+            {
+                "title": "Introduction to Programming with Pseudocode Course",
+                "year": "February 2023",
+                "description": "OpenWebinars"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contact",
+        "description": "If you would like to get in touch with me, you can send me an email or find me on LinkedIn or GitHub.",
+        "email": "jordidrgn@gmail.com",
+        "copyButton": "Copy",
+        "copiedButton": "Copied",
+        "copySuccess": "Email copied to the clipboard.",
+        "copyError": "Could not copy the email.",
+        "links": [
+            {
+                "label": "LinkedIn",
+                "url": "https://www.linkedin.com/in/jordidragan/",
+                "icon": "linkedin"
+            },
+            {
+                "label": "GitHub",
+                "url": "https://github.com/JordiDragan",
+                "icon": "github"
+            }
+        ]
+    }
+}

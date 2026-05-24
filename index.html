@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jordi Dragan - Portfolio</title>
+    <title></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -11,19 +11,19 @@
 </head>
 <body>
     <nav>
-        <div class="nav-logo">JORDIDRAGAN.DEV</div>
-        <button class="menu-toggle" aria-label="Abrir menú">
+        <div class="nav-logo" data-i18n="brand"></div>
+        <button class="menu-toggle" aria-label="" title="">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="#sobre-mi">Sobre mí</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#estudios">Estudios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#sobre-mi" data-i18n="nav.about"></a></li>
+            <li><a href="#proyectos" data-i18n="nav.projects"></a></li>
+            <li><a href="#skills" data-i18n="nav.skills"></a></li>
+            <li><a href="#experiencia" data-i18n="nav.experience"></a></li>
+            <li><a href="#estudios" data-i18n="nav.education"></a></li>
+            <li><a href="#contacto" data-i18n="nav.contact"></a></li>
         </ul>
         <div class="language-selector">
             <button class="lang-btn active" data-lang="es" title="Español">ES</button>
@@ -32,509 +32,42 @@
         </div>
     </nav>
 
-    <div id="main-content">
-    <section class="hero" id="sobre-mi">
-        <div class="hero-content">
-            <img src="Fotos/yo2.png" alt="Perfil" class="hero-image">
-            <h1>Jordi Dragan</h1>
-            <div class="title">Técnico Superior en ASIR</div>
-            <p class="hero-text">
-                Administrador de sistemas, redes e infraestructura IT con experiencia práctica en entornos exigentes. Me impulsa la resolución de problemas complejos y el aprendizaje constante, adaptándome rápidamente a nuevas tecnologías y entornos de trabajo.
-            </p>
-            <div class="hero-actions">
-                <a href="#contacto" class="cta-button">Ponte en contacto</a>
-                <a href="./cv.pdf" class="cta-button" download="Jordi Dragan - CV.pdf">Descargar CV</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="proyectos" id="proyectos">
-        <h2 class="section-title">Proyectos</h2>
-        <div class="proyectos-grid">
-            <div class="proyecto-card fade-in-up">
-                <div class="proyecto-image">
-                    <img src="Fotos/raspberry.jpeg" alt="Servidor propio Raspberry Pi">
-                </div>
-                <div class="proyecto-content">
-                    <h3 class="proyecto-title">HomeLab Pi</h3>
-                    <p class="proyecto-description">Configuración de servidor personal con Raspberry Pi, implementando contenedores Docker y servicios web con Nginx Proxy Manager y base de datos MariaDB.</p>
-                    <div class="badges">
-                        <span class="badge">Raspberry Pi</span>
-                        <span class="badge">Linux</span>
-                        <span class="badge">Docker</span>
-                        <span class="badge">Nginx</span>
-                        <span class="badge">MariaDB</span>
-                        <span class="badge">Proxy Inverso</span>
-                        <span class="badge">Autodidacta</span>
-                        <span class="badge">Aplicaciones web</span>
-                        <span class="badge">VPN</span>
-                    </div>
+    <div id="main-content" aria-live="polite">
+        <section class="hero" id="sobre-mi">
+            <div class="hero-content">
+                <img src="Fotos/yo2.png" alt="" class="hero-image">
+                <h1 data-i18n="hero.name"></h1>
+                <div class="title" data-i18n="hero.title"></div>
+                <p class="hero-text" data-i18n="hero.description"></p>
+                <div class="hero-actions">
+                    <a href="#contacto" class="cta-button" data-i18n="hero.contact"></a>
+                    <a href="cv.pdf" class="cta-button" download="Jordi Dragan - CV.pdf" data-i18n="hero.downloadcv"></a>
                 </div>
             </div>
+        </section>
 
-            <div class="proyecto-card fade-in-up">
-                <div class="proyecto-image">
-                    <img src="Fotos/iemhosting.png" alt="Simulación empresa de hosting">
-                </div>
-                <div class="proyecto-content">
-                    <h3 class="proyecto-title">Simulación empresa de hosting y VPS</h3>
-                    <p class="proyecto-description">Simulación completa de infraestructura de empresa de hosting con configuración de VLANs, firewall, routing y virtualización con Proxmox.</p>
-                    <div class="badges">
-                        <span class="badge">Cisco</span>
-                        <span class="badge">VLAN</span>
-                        <span class="badge">Routing</span>
-                        <span class="badge">Firewall</span>
-                        <span class="badge">Mikrotik</span>
-                        <span class="badge">Active Directory</span>
-                        <span class="badge">VPN</span>
-                        <span class="badge">Proxmox</span>
-                        <span class="badge">Trabajo en equipo</span>
-                        <span class="badge">Comunicación</span>
-                        <span class="badge">DNS</span>
-                        <span class="badge">DHCP</span>
-                        <span class="badge">Atención al cliente</span>
-                        <span class="badge">Aplicaciones web</span>
-                    </div>
-                </div>
+        <section class="proyectos" id="proyectos">
+            <h2 class="section-title" data-i18n="projects.title"></h2>
+        </section>
+
+        <section class="skills" id="skills">
+            <h2 class="section-title" data-i18n="skills.title"></h2>
+        </section>
+
+        <section class="experiencia" id="experiencia">
+            <h2 class="section-title" data-i18n="experience.title"></h2>
+        </section>
+
+        <section class="estudios" id="estudios">
+            <h2 class="section-title" data-i18n="education.title"></h2>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div class="contacto-content fade-in-up">
+                <h2 class="section-title" data-i18n="contact.title"></h2>
+                <p class="hero-text contact-desc" data-i18n="contact.description"></p>
             </div>
-
-            <div class="proyecto-card fade-in-up">
-                <div class="proyecto-image">
-                    <img src="Fotos/background.gif" alt="Juice Game Jam" style="image-rendering: pixelated;">
-                </div>
-                <div class="proyecto-content">
-                    <h3 class="proyecto-title">Juice Game Jam</h3>
-                    <p class="proyecto-description">Desarrollo de videojuego en una Game Jam con 100 horas de trabajo con un viaje financiado a Shanghái (China)</p>
-                    <div class="badges">
-                        <span class="badge">Godot</span>
-                        <span class="badge">GDScript</span>
-                        <span class="badge">Trabajo en equipo</span>
-                        <span class="badge">Creatividad</span>
-                        <span class="badge">Gestión del tiempo</span>
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto-card fade-in-up">
-                <div class="proyecto-image">
-                    <img src="Fotos/ogcard.png" alt="High Seas Hackathon">
-                </div>
-                <div class="proyecto-content">
-                    <h3 class="proyecto-title">High Seas Hackathon</h3>
-                    <p class="proyecto-description">Un hackaton con más de 100 horas de programación en el que experimenté con diversas tecnologías como desarrollo de videojuegos, desarrollo web y Python</p>
-                    <div class="badges">
-                        <span class="badge">Python</span>
-                        <span class="badge">IA</span>
-                        <span class="badge">Godot</span>
-                        <span class="badge">GDScript</span>
-                        <span class="badge">HTML</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">CSS</span>
-                        <span class="badge">C#</span>
-                        <span class="badge">API</span>
-                        <span class="badge">Cosmos</span>
-                    </div>
-                </div>
-            </div>
-            <div class="proyecto-card fade-in-up">
-                <div class="proyecto-image">
-                    <img src="https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png" alt="CanSat";>
-                </div>
-                <div class="proyecto-content">
-                    <h3 class="proyecto-title">CanSat</h3>
-                    <p class="proyecto-description">Un proyecto de desarrollo de un mini satélite del tamaño de una lata para recopilar datos atmosféricos y radiación UV</p>
-                    <div class="badges">
-                        <span class="badge">Arduino</span>
-                        <span class="badge">C++</span>
-                        <span class="badge">Arduino IDE</span>
-                        <span class="badge">Electrónica</span>
-                        <span class="badge">Sensores</span>
-                        <span class="badge">Soldadura</span>
-                        <span class="badge">Modelado 3D</span>
-                        <span class="badge">Modulos</span>
-                        <span class="badge">Adafruit</span>
-                        <span class="badge">Trabajo en equipo</span>
-                        <span class="badge">Python</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="skills">
-        <h2 class="section-title">Skills Técnicos</h2>
-        <div class="skills-container">
-            <div class="skill-category fade-in-up">
-                <h3 class="category-title">Sistemas Operativos</h3>
-                <div class="skills-grid os-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Linux">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Icons8_flat_linux.svg/960px-Icons8_flat_linux.svg.png" alt="Linux">
-                        </div>
-                        <div class="skill-name">Linux</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Windows Server">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Windows Server">
-                        </div>
-                        <div class="skill-name">Windows Server</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Active Directory">
-                            <img src="https://cdn.freebiesupply.com/logos/large/2x/azure-active-directory-logo-svg-vector.svg" alt="Active Directory">
-                        </div>
-                        <div class="skill-name">Active Directory</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Fedora">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Fedora_icon_%282021%29.svg/960px-Fedora_icon_%282021%29.svg.png" alt="Fedora">
-                        </div>
-                        <div class="skill-name">Fedora</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Ubuntu Server">
-                            <img src="https://icon.icepanel.io/Technology/svg/Ubuntu.svg" alt="Ubuntu Server">
-                        </div>
-                        <div class="skill-name">Ubuntu Server</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Raspberry Pi OS">
-                            <img src="https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/raspberry-pi-logo_resized_256.png" alt="Raspberry Pi OS">
-                        </div>
-                        <div class="skill-name">Raspberry Pi OS</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Terminal">
-                            <img src="https://sw.kovidgoyal.net/kitty/_static/kitty.svg" alt="Terminal">
-                        </div>
-                        <div class="skill-name">Terminal</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category fade-in-up">
-                <h3 class="category-title">Virtualización y Contenedores</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Docker">
-                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png" alt="Docker">
-                        </div>
-                        <div class="skill-name">Docker</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Kubernetes">
-                            <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kubernetes-icon.png" alt="Kubernetes">
-                        </div>
-                        <div class="skill-name">Kubernetes</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Proxmox">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png" alt="Proxmox">
-                        </div>
-                        <div class="skill-name">Proxmox</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="VMWare">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Vmware_workstation_16_icon.svg/960px-Vmware_workstation_16_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20200923084801" alt="VMWare">
-                        </div>
-                        <div class="skill-name">VMWare</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="VirtualBox">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/VirtualBox_2024_Logo.svg/1280px-VirtualBox_2024_Logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="VirtualBox">
-                        </div>
-                        <div class="skill-name">VirtualBox</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="QEMU">
-                            <img src="https://images.icon-icons.com/2699/PNG/512/qemu_logo_icon_169821.png" alt="QEMU">
-                        </div>
-                        <div class="skill-name">QEMU</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category fade-in-up">
-                <h3 class="category-title">Redes y Firewall</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Cisco">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Cisco">
-                        </div>
-                        <div class="skill-name">Cisco</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Mikrotik">
-                            <img src="https://data-discourse.cdn.mikrotik.com/App_Winbox.webp" alt="Mikrotik">
-                        </div>
-                        <div class="skill-name">Mikrotik</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Routing">
-                            <img src="https://api.iconify.design/lucide:route.svg?color=%23ffffff" alt="Routing">
-                        </div>
-                        <div class="skill-name">Routing</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Switching">
-                            <img src="https://api.iconify.design/lucide:network.svg?color=%23ffffff" alt="Switching">
-                        </div>
-                        <div class="skill-name">Switching</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Ubiquiti Unifi">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ubiquiti-unifi.png" alt="Ubiquiti Unifi">
-                        </div>
-                        <div class="skill-name">Ubiquiti Unifi</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="WireGuard">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireguard.png" alt="WireGuard">
-                        </div>
-                        <div class="skill-name">WireGuard</div>
-                    </div> 
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="WireShark">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireshark.png" alt="WireShark">
-                        </div>
-                        <div class="skill-name">WireShark</div>
-                    </div> 
-                </div>
-            </div>
-
-            <div class="skill-category fade-in-up">
-                <h3 class="category-title">Servidores Web</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Apache">
-                            <img src="https://icon.icepanel.io/Technology/svg/Apache.svg" alt="Apache">
-                        </div>
-                        <div class="skill-name">Apache</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Nginx Proxy Manager">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nginx-proxy-manager.png" alt="Nginx Proxy Manager">
-                        </div>
-                        <div class="skill-name">Nginx Proxy Manager</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="MySQL">
-                            <img src="https://cdn-icons-png.flaticon.com/512/5968/5968313.png" alt="MySQL">
-                        </div>
-                        <div class="skill-name">MySQL</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Mail">
-                            <img src="https://nextcloud.com/c/uploads/2023/11/Roundcube-Logo-Icon-300x300.png" alt="Mail">
-                        </div>
-                        <div class="skill-name">Mail</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="DNS">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Technitium_DNS_Server.png" alt="DNS">
-                        </div>
-                        <div class="skill-name">DNS</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="GLPI">
-                            <img src="https://www.tecnicascompetitivas.com/wp-content/uploads/2024/10/icon-glpi.png" alt="GLPI">
-                        </div>
-                        <div class="skill-name">GLPI</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="FreePBX">
-                            <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg" alt="FreePBX">
-                        </div>
-                        <div class="skill-name">FreePBX</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Squid Proxy">
-                            <img src="https://elpuig.xeill.net/Members/vcarceler/articulos/squid/squid-logo.webp/@@images/92f66de1-ad52-4a24-a850-eefe7c05ce39.png" alt="Squid Proxy">
-                        </div>
-                        <div class="skill-name">Squid Proxy</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="WordPress">
-                            <img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" alt="WordPress">
-                        </div>
-                        <div class="skill-name">WordPress</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="skill-category fade-in-up">
-                <h3 class="category-title">Scripting & Programación</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Bash">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Bash_Logo_Colored.svg/960px-Bash_Logo_Colored.svg.png" alt="Bash">
-                        </div>
-                        <div class="skill-name">Bash</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Python">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Python">
-                        </div>
-                        <div class="skill-name">Python</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="PowerShell">
-                            <img src="https://cdn.iconscout.com/icon/free/png-256/free-potencia-shell-logo-icon-svg-download-png-2945093.png" alt="PowerShell">
-                        </div>
-                        <div class="skill-name">PowerShell</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="Ansible">
-                            <img src="https://cdn.simpleicons.org/ansible/FFFFFF" alt="Ansible">
-                        </div>
-                        <div class="skill-name">Ansible</div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-icon" aria-label="GDScript">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Godot_icon.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original" alt="GDScript">
-                        </div>
-                        <div class="skill-name">GDScript</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="experiencia" id="experiencia">
-    <h2 class="section-title">Experiencia Laboral</h2>
-
-    <div class="experiencia-item fade-in-up">
-        <div class="experiencia-header">
-            <div>
-                <h3 class="experiencia-title">Técnico Informático (Prácticas)</h3>
-                <p class="experiencia-empresa">Informàtica Ràpita</p>
-            </div>
-            <div class="experiencia-dates">Junio - Julio 2025</div>
-        </div>
-        <ul class="experiencia-tasks">
-            <li>Atención al cliente</li>
-            <li>Revisión y reparación de maquinaria informática</li>
-            <li>Resolución de problemas de clientes</li>
-            <li>Instalación de antenas y cámaras</li>
-        </ul>
-    </div>
-
-    <div class="experiencia-item fade-in-up">
-        <div class="experiencia-header">
-            <div>
-                <h3 class="experiencia-title">Técnico Informático (Prácticas)</h3>
-                <p class="experiencia-empresa">St Augustine College, Malta</p>
-            </div>
-            <div class="experiencia-dates">Marzo - Mayo 2025</div>
-        </div>
-        <ul class="experiencia-tasks">
-            <li>Preparación de ordenadores para alumnos</li>
-            <li>Reparación de ordenadores</li>
-            <li>Instalación de suites ofimáticas</li>
-            <li>Gestión de Active Directory</li>
-        </ul>
-    </div>
-
-    <div class="experiencia-item fade-in-up">
-        <div class="experiencia-header">
-            <div>
-                <h3 class="experiencia-title">Diseñador Web en WordPress (Prácticas)</h3>
-                <p class="experiencia-empresa">Picture Perfect Malta</p>
-            </div>
-            <div class="experiencia-dates">Febrero - Marzo 2024</div>
-        </div>
-        <ul class="experiencia-tasks">
-            <li>Diseño de páginas web con WordPress para empresas</li>
-            <li>Administración y mantenimiento de webs</li>
-        </ul>
-    </div>
-
-    <div class="experiencia-item fade-in-up">
-        <div class="experiencia-header">
-            <div>
-                <h3 class="experiencia-title">Técnico Informático (Prácticas)</h3>
-                <p class="experiencia-empresa">IES Sól de Riu</p>
-            </div>
-            <div class="experiencia-dates">Octubre 2023 - Abril 2024</div>
-        </div>
-        <ul class="experiencia-tasks">
-            <li>Resolución de problemas de alumnos y profesores</li>
-            <li>Reparación y mantenimiento de equipos informáticos</li>
-            <li>Soporte técnico</li>
-        </ul>
-    </div>
-
-</section>
-
-<section class="estudios" id="estudios">
-    <h2 class="section-title">Educación</h2>
-    <div class="timeline">
-
-        <div class="timeline-item fade-in-up">
-            <div class="timeline-content">
-                <div class="timeline-title">FP Superior Administración de Sistemas Informáticos en Red</div>
-                <div class="timeline-year">Septiembre 2024 - Mayo 2026</div>
-                <div class="timeline-description">IES Montsià</div>
-            </div>
-        </div>
-
-        <div class="timeline-item fade-in-up">
-            <div class="timeline-content">
-                <div class="timeline-title">FP Medio Sistemas Informáticos y Redes</div>
-                <div class="timeline-year">Septiembre 2022 - Julio 2024</div>
-                <div class="timeline-description">IES Montsià</div>
-            </div>
-        </div>
-
-        <div class="timeline-item fade-in-up">
-            <div class="timeline-content">
-                <div class="timeline-title">Certificado Python 3</div>
-                <div class="timeline-year">Noviembre 2023</div>
-                <div class="timeline-description">OpenWebinars</div>
-            </div>
-        </div>
-
-        <div class="timeline-item fade-in-up">
-            <div class="timeline-content">
-                <div class="timeline-title">Curso de Introducción a la Programación con Pseudocódigo</div>
-                <div class="timeline-year">Febrero 2023</div>
-                <div class="timeline-description">OpenWebinars</div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-    <section class="contacto" id="contacto">
-        <div class="contacto-content">
-            <h2 class="section-title">Contacto</h2>
-            <p class="hero-text contact-desc">
-                Si deseas ponerte en contacto conmigo, puedes enviarme un correo electrónico o encontrarme en LinkedIn o GitHub.
-            </p>
-            <div class="contacto-email">
-                <div class="email-display">jordidrgn@gmail.com</div>
-                <button class="copy-email-btn" onclick="copyEmail(this)">Copiar</button>
-            </div>
-            <p class="copy-email-feedback" aria-live="polite"></p>
-            <div class="contacto-links">
-                <a href="https://www.linkedin.com/in/jordidragan/" target="_blank" rel="noopener noreferrer" class="contacto-link">
-                    <span class="contacto-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="img" focusable="false">
-                            <path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5ZM3 9h4v12H3V9Zm7 0h3.84v1.64h.05c.53-1 1.83-2.06 3.77-2.06C21.7 8.58 22 11.05 22 14.27V21h-4v-5.96c0-1.42-.03-3.26-1.99-3.26-1.99 0-2.3 1.56-2.3 3.16V21h-4V9Z" />
-                        </svg>
-                    </span>
-                    LinkedIn
-                </a>
-                <a href="https://github.com/JordiDragan" target="_blank" rel="noopener noreferrer" class="contacto-link">
-                    <span class="contacto-icon" aria-hidden="true">
-                        <svg viewBox="0 0 24 24" role="img" focusable="false">
-                            <path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.41-4.04-1.41-.55-1.37-1.33-1.74-1.33-1.74-1.09-.73.08-.72.08-.72 1.2.08 1.83 1.22 1.83 1.22 1.07 1.83 2.8 1.3 3.49 1 .11-.77.42-1.3.77-1.6-2.67-.3-5.47-1.32-5.47-5.88 0-1.3.47-2.37 1.23-3.21-.13-.3-.53-1.53.12-3.18 0 0 1-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.65 1.65.25 2.88.12 3.18.77.84 1.23 1.91 1.23 3.21 0 4.57-2.81 5.58-5.49 5.88.43.37.82 1.1.82 2.22v3.29c0 .32.21.69.83.58A12 12 0 0 0 12 .5Z" />
-                        </svg>
-                    </span>
-                    GitHub
-                </a>
-            </div>
-        </div>
-    </section>
+        </section>
     </div>
 
     <script src="script.js"></script>
