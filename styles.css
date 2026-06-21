@@ -536,14 +536,14 @@ body.is-returning-to-projects {
 
 .project-detail {
     min-height: 100vh;
-    padding: 7rem 1.5rem 3rem;
+    padding: 2.5rem 1.5rem 3rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .project-detail-card {
-    width: min(920px, 100%);
+    width: min(920px, 100%); 
     background: rgba(38, 26, 56, 0.92);
     border: 1px solid var(--border-color);
     border-radius: 24px;
@@ -589,7 +589,6 @@ body.is-returning-to-projects {
 }
 
 .project-detail-description {
-    max-width: 62ch;
     font-size: 1rem;
     color: var(--text-secondary);
     line-height: 1.8;

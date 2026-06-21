@@ -115,9 +115,13 @@ function getProjectSlug() {
 }
 
 function getLocalesPath() {
-    return document.body?.dataset.localesPath || 'locales';
+    let path = document.body?.dataset.localesPath || 'locales';
+    // Si no empieza por barra ni es una URL completa, le ponemos la barra de la raíz
+    if (!path.startsWith('/') && !path.startsWith('http')) {
+        path = '/' + path;
+    }
+    return path;
 }
-
 function renderTextBlock(value) {
     if (Array.isArray(value)) {
         return value.map(item => `<p>${escapeHtml(item)}</p>`).join('');
