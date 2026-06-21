@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juice Game Jam | Jordi Dragan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body class="project-page" data-project-slug="juice-game-jam" data-locales-path="../../locales">
+    <nav>
+        <a class="nav-logo" href="../../index.html" data-i18n="brand"></a>
+        <div class="language-selector">
+            <button class="lang-btn active" data-lang="es" title="Español">ES</button>
+            <button class="lang-btn" data-lang="en" title="English">EN</button>
+            <button class="lang-btn" data-lang="ja" title="日本語">JA</button>
+        </div>
+    </nav>
+    <main class="project-detail">
+        <div class="project-detail-card">
+            <a class="project-back-link" href="../../index.html" data-i18n="projectPage.back">← Volver a proyectos</a>
+            <div class="project-detail-kicker" data-i18n="projectPage.label">Proyecto</div>
+            <h1 id="juice-game-jam">Juice Game Jam</h1>
+            <p class="project-detail-description">Desarrollo de videojuego en una Game Jam con 100 horas de trabajo con un viaje financiado a Shanghái (China).</p>
+            <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyenFpdWQ2dmFyaHJiejY4bzZscGxiOWdsMHA3OWczbHkyMmJ3d2sxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cfGmVRsJI6wq6noGxP/200.gif" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+        </div>
+    </main>
+    <script src="../../script.js"></script>
+    <script>
+        document.addEventListener('click', (e) => {
+            const backLink = e.target.closest('.project-back-link');
+            if (!backLink) return;
+            const href = backLink.getAttribute('href');
+            if (!href) return;
+            e.preventDefault();
+            document.body.classList.add('is-returning-to-projects');
+            window.setTimeout(() => {
+                window.location.href = href;
+            }, 110);
+        });
+    </script>
+</body>
+</html>

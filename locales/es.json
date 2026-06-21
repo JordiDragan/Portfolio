@@ -19,6 +19,10 @@
         "contact": "Ponte en contacto",
         "downloadcv": "Descargar CV"
     },
+    "projectPage": {
+        "label": "Proyecto",
+        "back": "Volver a proyectos"
+    },
     "projects": {
         "title": "Proyectos",
         "items": [
@@ -27,6 +31,7 @@
                     "src": "Fotos/raspberry.jpeg",
                     "alt": "Servidor propio Raspberry Pi"
                 },
+                "slug": "homelab-pi",
                 "title": "HomeLab Pi",
                 "description": "Configuración de servidor personal con Raspberry Pi, implementando contenedores Docker y servicios web con Nginx Proxy Manager y base de datos MariaDB.",
                 "badges": [
@@ -46,6 +51,7 @@
                     "src": "Fotos/iemhosting.png",
                     "alt": "Simulación empresa de hosting"
                 },
+                "slug": "hosting-vps-company-simulation",
                 "title": "Simulación empresa de hosting y VPS",
                 "description": "Simulación completa de infraestructura de empresa de hosting con configuración de VLANs, firewall, routing y virtualización con Proxmox.",
                 "badges": [
@@ -71,6 +77,7 @@
                     "alt": "Juice Game Jam",
                     "style": "image-rendering: pixelated;"
                 },
+                "slug": "juice-game-jam",
                 "title": "Juice Game Jam",
                 "description": "Desarrollo de videojuego en una Game Jam con 100 horas de trabajo con un viaje financiado a Shanghái (China)",
                 "badges": [
@@ -86,6 +93,7 @@
                     "src": "Fotos/ogcard.png",
                     "alt": "High Seas Hackathon"
                 },
+                "slug": "high-seas-hackathon",
                 "title": "High Seas Hackathon",
                 "description": "Un hackaton con más de 100 horas de programación en el que experimenté con diversas tecnologías como desarrollo de videojuegos, desarrollo web y Python",
                 "badges": [
@@ -106,6 +114,7 @@
                     "src": "https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png",
                     "alt": "CanSat"
                 },
+                "slug": "cansat",
                 "title": "CanSat",
                 "description": "Un proyecto de desarrollo de un mini satélite del tamaño de una lata para recopilar datos atmosféricos y radiación UV",
                 "badges": [

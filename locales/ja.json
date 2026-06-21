@@ -19,6 +19,10 @@
         "contact": "お問い合わせ",
         "downloadcv": "CVをダウンロード"
     },
+    "projectPage": {
+        "label": "プロジェクト",
+        "back": "プロジェクトに戻る"
+    },
     "projects": {
         "title": "プロジェクト",
         "items": [
@@ -27,6 +31,7 @@
                     "src": "Fotos/raspberry.jpeg",
                     "alt": "Raspberry Pi 個人サーバー"
                 },
+                "slug": "homelab-pi",
                 "title": "HomeLab Pi",
                 "description": "Raspberry Pi を使用した個人サーバーの構築。Docker コンテナ、Nginx Proxy Manager、および MariaDB データベースを用いた Web サービスを実装。",
                 "badges": [
@@ -46,6 +51,7 @@
                     "src": "Fotos/iemhosting.png",
                     "alt": "ホスティング会社のシミュレーション"
                 },
+                "slug": "hosting-vps-company-simulation",
                 "title": "ホスティング・VPS 企業シミュレーション",
                 "description": "VLAN 設定、ファイアウォール、ルーティング、Proxmox による仮想化を含む、ホスティング企業の完全なインフラシミュレーション。",
                 "badges": [
@@ -71,6 +77,7 @@
                     "alt": "Juice Game Jam",
                     "style": "image-rendering: pixelated;"
                 },
+                "slug": "juice-game-jam",
                 "title": "Juice Game Jam",
                 "description": "ゲームジャムで 100 時間かけて開発したビデオゲーム。上海（中国）への渡航費用が支給されました。",
                 "badges": [
@@ -86,6 +93,7 @@
                     "src": "Fotos/ogcard.png",
                     "alt": "High Seas Hackathon"
                 },
+                "slug": "high-seas-hackathon",
                 "title": "High Seas ハッカソン",
                 "description": "100 時間以上のコーディングを行ったハッカソン。ゲーム開発、Web 開発、Python など多様な技術を実験・習得しました。",
                 "badges": [
@@ -106,6 +114,7 @@
                     "src": "https://eseiaat.upc.edu/ca/projectes-estudiants/cansat/img-cansat/cansat_key_visual_pillars.png/@@images/image-0-acc38a729782ec7f8e82139ea282adae.png",
                     "alt": "CanSat"
                 },
+                "slug": "cansat",
                 "title": "CanSat",
                 "description": "缶サイズのミニ人工衛星の開発プロジェクト。大気データと紫外線放射の収集を目的としました。",
                 "badges": [
