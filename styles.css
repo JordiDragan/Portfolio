@@ -893,7 +893,7 @@ body.is-returning-to-projects {
 }
 
 .experiencia-tasks li::before {
-    content: 'â†’';
+    content: '→ ';
     position: absolute;
     left: 0;
     color: var(--accent-purple);
