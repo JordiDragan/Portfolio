@@ -116,7 +116,6 @@ function getProjectSlug() {
 
 function getLocalesPath() {
     let path = document.body?.dataset.localesPath || 'locales';
-    // Si no empieza por barra ni es una URL completa, le ponemos la barra de la raíz
     if (!path.startsWith('/') && !path.startsWith('http')) {
         path = '/' + path;
     }

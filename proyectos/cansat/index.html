@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CanSat | Jordi Dragan</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .cansat-photo {
+            width: 100%;
+            max-width: 480px;
+            display: block;
+            margin: 16px auto 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        }
+        .cansat-photo-small {
+            max-width: 320px;
+        }
+        .cansat-gallery-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 16px 0 24px;
+        }
+        .cansat-gallery-row .cansat-photo {
+            margin: 0;
+            flex: 1 1 240px;
+            max-width: 320px;
+        }
+        .cansat-component {
+            margin-bottom: 28px;
+        }
+        .cansat-component strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.02em;
+        }
+        .cansat-specs {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 640px) {
+            .cansat-gallery-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
-<body class="project-page" data-project-slug="cansat" data-locales-path="/locales">
+<body class="project-page" data-project-slug="cansat" data-locales-path="../../locales">
     <nav>
-        <a class="nav-logo" href="/" data-i18n="brand"></a>
+        <a class="nav-logo" href="../../" data-i18n="brand"></a>
         <div class="language-selector">
             <button class="lang-btn active" data-lang="es" title="Español">ES</button>
             <button class="lang-btn" data-lang="en" title="English">EN</button>
@@ -22,12 +66,149 @@
         <div class="project-detail-card">
             <a class="project-back-link" href="/" data-i18n="projectPage.back">← Volver a proyectos</a>
             <div class="project-detail-kicker" data-i18n="projectPage.label">Proyecto</div>
-            <h1 id="cansat">CanSat</h1>
-            <p class="project-detail-description">Un proyecto de desarrollo de un mini satélite del tamaño de una lata para recopilar datos atmosféricos y radiación UV.</p>
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyenFpdWQ2dmFyaHJiejY4bzZscGxiOWdsMHA3OWczbHkyMmJ3d2sxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cfGmVRsJI6wq6noGxP/200.gif" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+            <h1 id="cansat" data-i18n="cansatProject.title">CanSat</h1>
+            <div style="margin-top: 20px; text-align: left;">
+
+                <!-- Introducción -->
+                <h2 data-i18n="cansatProject.intro_title">¿Qué es el CanSat?</h2>
+                <p data-i18n="cansatProject.intro_p1"></p>
+                <div style="height: 20px;"></div>
+                <p data-i18n="cansatProject.intro_p2"></p>
+                <div style="height: 20px;"></div>
+                <p data-i18n="cansatProject.intro_p3"></p>
+
+                <!-- Electrónica -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.elec_title">Electrónica</h2>
+                <p data-i18n="cansatProject.elec_p1"></p>
+                <div style="height: 20px;"></div>
+                <div class="cansat-component">
+                    <strong data-i18n="cansatProject.elec_c1_name"></strong>
+                    <p data-i18n="cansatProject.elec_c1_desc"></p>
+                    <img class="cansat-photo cansat-photo-medium"
+                         src="../../Fotos/cansat/apc220.png"
+                         alt="Módulo de radiofrecuencia APC220">
+                </div>
+
+                <div class="cansat-component">
+                    <strong data-i18n="cansatProject.elec_c2_name"></strong>
+                    <p data-i18n="cansatProject.elec_c2_desc"></p>
+                    <img class="cansat-photo cansat-photo-medium"
+                         src="../../Fotos/cansat/bmp280.png"
+                         alt="Sensor de presión y temperatura BMP280">
+                </div>
+
+                <div class="cansat-component">
+                    <strong data-i18n="cansatProject.elec_c3_name"></strong>
+                    <p data-i18n="cansatProject.elec_c3_desc"></p>
+                    <img class="cansat-photo cansat-photo-medium"
+                         src="../../Fotos/cansat/bn880.png"
+                         alt="Módulo GPS BN-880">
+                </div>
+
+                <div class="cansat-component">
+                    <strong data-i18n="cansatProject.elec_c4_name"></strong>
+                    <p data-i18n="cansatProject.elec_c4_desc"></p>
+                    <img class="cansat-photo cansat-photo-medium"
+                         src="../../Fotos/cansat/uv-sensor.png"
+                         alt="Sensor de radiación ultravioleta">
+                </div>
+
+                <div class="cansat-component">
+                    <strong data-i18n="cansatProject.elec_c5_name"></strong>
+                    <p data-i18n="cansatProject.elec_c5_desc"></p>
+                    <img class="cansat-photo cansat-photo-medium"
+                         src="../../Fotos/cansat/sd-module.png"
+                         alt="Módulo lector de tarjeta SD">
+                </div>
+
+                <!-- Diagrama y montaje -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.diagram_title">Diagrama</h2>
+                <p data-i18n="cansatProject.diagram_p1"></p>
+                <img class="cansat-photo"
+                     src="../../Fotos/cansat/diagrama.png"
+                     alt="Diagrama de conexión de los componentes en el Arduino">
+                <p data-i18n="cansatProject.diagram_p2"></p>
+                <img class="cansat-photo"
+                     src="../../Fotos/cansat/montaje.png"
+                     alt="Montaje real de los componentes electrónicos en el Arduino">
+
+                <!-- Programación -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.prog_title">Programación</h2>
+                <p data-i18n="cansatProject.prog_p1"></p>
+                <p data-i18n="cansatProject.prog_p2"></p>
+                <img class="cansat-photo"
+                     src="../../Fotos/cansat/csv.png"
+                     alt="Datos registrados por los sensores en formato CSV">
+                <p data-i18n="cansatProject.prog_p3"></p>
+                <div style="height: 20px;"></div>
+                <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/JordiDragan/CanSat" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download">Ver en GitHub</span>
+                    </a>
+                </div>
+                <!-- Modelo 3D -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.mod_title">Modelo 3D</h2>
+                <p data-i18n="cansatProject.mod_p1"></p>
+                <div style="height: 20px;"></div>
+                <p data-i18n="cansatProject.mod_p2"></p>
+                <div style="height: 20px;"></div>
+                <model-viewer
+                    class="cansat-3d-viewer"
+                    src="can.glb"
+                    alt="Modelo 3D del cuerpo del CanSat"
+                    camera-controls
+                    auto-rotate
+                    rotation-per-second="20deg"
+                    shadow-intensity="1"
+                    shadow-softness="0.8"
+                    exposure="0.5"
+                    environment-image="neutral"
+                    interaction-prompt="when-focused">
+                </model-viewer>
+                <p data-i18n="cansatProject.mod_p3"></p>
+                <img class="cansat-photo"
+                    src="../../Fotos/cansat/blender.png"
+                    alt="Modelo 3D del cuerpo del CanSat en Blender">
+
+                <!-- Paracaídas -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.para_title">Paracaídas</h2>
+                <ul class="cansat-specs">
+                    <li data-i18n="cansatProject.para_specs_diameter"></li>
+                    <li data-i18n="cansatProject.para_specs_height"></li>
+                </ul>
+                <p data-i18n="cansatProject.para_p1"></p>
+                <img class="cansat-photo"
+                     src="../../Fotos/cansat/paracaidas.png"
+                     alt="Prototipo de paracaídas hecho a mano">
+                <p data-i18n="cansatProject.para_p1"></p>
+                <div style="height: 20px;"></div>
+                <!-- Informe -->
+                <h2 style="margin-top: 30px;" data-i18n="cansatProject.doc_title">Informe CanSat</h2>
+                <p data-i18n="cansatProject.doc_p1"></p>
+                <div class="pdf-viewer-wrap">
+                <iframe
+                    class="pdf-viewer"
+                    src="cansat.pdf"
+                    title="Informe del proyecto CanSat">
+                </iframe>
+                <p class="pdf-fallback">
+                    <span data-i18n="cansatProject.doc_p2">¿No se ve el documento?</span>
+                    <a href="cansat.pdf" target="_blank" rel="noopener" data-i18n="cansatProject.doc_p3"></a>
+                </p>
+            </div>
+            </div>
         </div>
     </main>
-    <script src="/script.js"></script>
+    <script src="../../script.js"></script>
     <script>
         document.addEventListener('click', (e) => {
             const backLink = e.target.closest('.project-back-link');
