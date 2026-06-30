@@ -158,15 +158,19 @@ function getProjectLink(project) {
     return slug ? `proyectos/${slug}.html#${slug}` : '#proyectos';
 }
 
-function renderProjectCard(project) {
+const PROJECTS_NOT_IN_PROGRESS = ['cansat', 'homelab-pi'];
+
+function renderProjectCard(project, projects) {
     const image = project.image || {};
     const badges = Array.isArray(project.badges) ? project.badges : [];
     const projectLink = getProjectLink(project);
     const projectTitle = project.title || '';
     const projectSlug = project.slug || slugifyProjectName(project.title);
+    const isInProgress = !PROJECTS_NOT_IN_PROGRESS.includes(projectSlug);
+    const inProgressLabel = (projects && projects.inProgressLabel) || 'En construcción';
 
     return `
-            <a class="proyecto-card fade-in-up" href="${escapeAttribute(projectLink)}" data-project-slug="${escapeAttribute(projectSlug)}" aria-label="Abrir ${escapeAttribute(projectTitle)}">
+            <a class="proyecto-card fade-in-up${isInProgress ? ' proyecto-in-progress' : ''}" href="${escapeAttribute(projectLink)}" data-project-slug="${escapeAttribute(projectSlug)}" aria-label="Abrir ${escapeAttribute(projectTitle)}">
                 <span class="proyecto-open-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
                         <path d="M7 17L17 7M10 7h7v7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -174,6 +178,10 @@ function renderProjectCard(project) {
                 </span>
                 <div class="proyecto-image">
                     <img src="${escapeAttribute(image.src || '')}" alt="${escapeAttribute(image.alt || '')}"${image.style ? ` style="${escapeAttribute(image.style)}"` : ''}>
+                    ${isInProgress ? `
+                    <div class="proyecto-construction-overlay">
+                        <span class="proyecto-construction-text">${escapeHtml(inProgressLabel)}</span>
+                    </div>` : ''}
                 </div>
                 <div class="proyecto-content">
                     <h3 class="proyecto-title">${escapeHtml(project.title || '')}</h3>
@@ -193,7 +201,7 @@ function renderProjectsSection(projects) {
     <section class="proyectos" id="proyectos">
         <h2 class="section-title">${escapeHtml(projects.title || '')}</h2>
         <div class="proyectos-grid">
-            ${(projects.items || []).map(renderProjectCard).join('')}
+            ${(projects.items || []).map(item => renderProjectCard(item, projects)).join('')}
         </div>
     </section>`;
 }

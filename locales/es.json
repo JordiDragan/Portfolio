@@ -1,4 +1,5 @@
 {
+    "prog_download": "Repositorio de GitHub",
     "title": "Jordi Dragan - Portfolio",
     "lang": "es",
     "menuLabel": "Abrir menú",
@@ -25,6 +26,7 @@
     },
     "projects": {
         "title": "Proyectos",
+        "inProgressLabel": "En construcción",
         "items": [
             {
                 "image": {
@@ -430,5 +432,43 @@
         "doc_p1": "Este es un informe que hice para mi profesor, explicando lo que hicimos en el proyecto y reflexionando sobre el trabajo. El documento está en catalán y no cuenta con traducción",
         "doc_p2": "¿No se ve el documento?",
         "doc_p3": "Ábrelo en una pestaña nueva"
+    },
+    "homelabProject": {
+        "intro": "En el hackathon de High Seas me regalaron una Raspberry Pi de 4GB. La tuve abandonada un tiempo porque no sabía qué hacer con ella, pero un día decidí montarme mi propio homelab humilde con la intención de solucionar algunos problemas que tenía o servicios que necesitaba.",
+        "servicesTitle": "Servicios implementados",
+        "domain_title": "Dominio propio",
+        "domain_p1": "Mi servidor es accesible desde internet usando un dominio adquirido con Name.com gracias al programa de GitHub Education.",
+        "domain_p2": "Para no tener que contratar una IP fija decidí montar un DDNS (Dynamic Domain Name Server). Transferí el dominio a Cloudflare ya que desde Name era muy complicado, y mediante un script desarrollado por Timothy Miller en GitHub conseguí hacer que cada ciertos minutos la Raspberry comprobara cuál era su IP pública y actualizara los registros DNS.",
+        "proxy_title": "Proxy inverso",
+        "proxy_p1": "Cada aplicación web que tengo en mi servidor está alojada en un puerto diferente para no tener conflictos. Para que dichas aplicaciones sean accesibles desde internet he tenido que levantar un proxy inverso de Nginx mediante Docker, y mediante este contenedor puedo apuntar a cada servicio que tengo sin importar el puerto. Cada uno cuenta con su propio subdominio.",
+        "adguard_title": "AdGuard",
+        "adguard_p1": "En mi red privada tengo mi propio servidor DNS que se encarga de filtrar las peticiones para bloquear anuncios, rastreadores y páginas de phishing. Además, puedo monitorizar la red para ver si hay algún intruso o si se está usando para actividades no deseadas.",
+        "adguard_p2": "Tuve un problema con mi router ya que no me permitía cambiar los DNS en el DHCP, así que lo desactivé y activé el que trae el propio AdGuard para que así todos los dispositivos de mi red estén seguros.",
+        "books_title": "Libros",
+        "books_p1": "Me gusta la lectura y actualmente estoy aprendiendo japonés. Uno de los métodos que uso es la lectura, por eso decidí montarme un servidor para guardar mis libros y poder leer desde cualquier sitio sin tener que descargarlos en mi móvil o mi iPad. Uso Booklore y mediante el protocolo OIDC puedo acceder desde cualquier sitio a mi biblioteca.",
+        "music_title": "Música",
+        "music_p1": "Este es el servicio que más uso con diferencia, ya que lo utilizo todos los días. Me di cuenta de que las suscripciones de servicios de streaming eran caras y los archivos FLAC ofrecían mejor calidad que Spotify, así que me monté mi propio servidor de música con Navidrome. La única desventaja que le encuentro es que pierdo el algoritmo que ayuda a encontrar música nueva, pero tampoco me parece tan grave como para volver a un servicio de streaming.",
+        "vpn_title": "VPN",
+        "vpn_p1": "Para poder tener acceso a mi red local desde una conexión externa decidí montarme una VPN usando WireGuard. Además, así puedo tener el AdGuard bloqueando anuncios desde cualquier parte del mundo.",
+        "cloudflareName": "Cloudflare",
+        "cloudflareDesc": "DNS dinámico con protección DDoS y monitoreo de tráfico",
+        
+        "bookloreName": "Booklore",
+        "bookloreDesc": "Servidor de libros con acceso mediante OIDC",
+        
+        "AdGuardName": "AdGuard",
+        "AdGuardDesc": "DNS privado para bloquear anuncios, rastreadores y páginas de phishing",
+        
+        "navidromeName": "Navidrome",
+        "navidromeDesc": "Servidor de música donde alojo todas mis canciones favoritas",
+        
+        "nginxProxyManagerName": "Nginx Proxy Manager",
+        "nginxProxyManagerDesc": "Proxy inverso para alojar múltiples aplicaciones web",
+        
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "VPN para acceder a la red local desde fuera y tener el AdGuard funcionando"
+    
+        
+    
     }
 }

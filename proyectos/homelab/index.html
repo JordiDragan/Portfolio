@@ -9,6 +9,142 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="../../styles.css">
+        <style>
+        .cansat-photo {
+            width: 100%;
+            max-width: 480px;
+            display: block;
+            margin: 16px auto 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        }
+        .cansat-photo-small {
+            max-width: 320px;
+        }
+        .cansat-photo-big {
+            max-width: 940px;
+        }
+        .cansat-gallery-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 16px 0 24px;
+        }
+        .cansat-gallery-row .cansat-photo {
+            margin: 0;
+            flex: 1 1 240px;
+            max-width: 320px;
+        }
+        .cansat-component {
+            margin-bottom: 28px;
+        }
+        .cansat-component strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.02em;
+        }
+        .cansat-specs {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 640px) {
+            .cansat-gallery-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .services-section {
+            padding: 48px 40px;
+            font-family: "Poppins", system-ui, sans-serif;
+        }
+
+        .services-section__title {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .services-section__divider {
+            border: none;
+            border-top: 1px dashed #3a3a3a;
+            margin: 0 0 32px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .service-card {
+            background: black;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 20px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #444444;
+            transform: translateY(-2px);
+        }
+
+        .service-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .service-card__icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .service-card__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .service-card__name {
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .service-card__desc {
+            color: #a3a3a3;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive: 2 columnas en tablet, 1 en móvil */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .services-section {
+                padding: 32px 20px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body class="project-page" data-project-slug="homelab-pi" data-locales-path="../../locales">
     <nav>
@@ -24,8 +160,223 @@
             <a class="project-back-link" href="../../" data-i18n="projectPage.back">← Volver a proyectos</a>
             <div class="project-detail-kicker" data-i18n="projectPage.label">Proyecto</div>
             <h1 id="homelab-pi">HomeLab Pi</h1>
-            <p class="project-detail-description">Configuración de servidor personal con Raspberry Pi, implementando contenedores Docker y servicios web con Nginx Proxy Manager y base de datos MariaDB.</p>
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyenFpdWQ2dmFyaHJiejY4bzZscGxiOWdsMHA3OWczbHkyMmJ3d2sxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cfGmVRsJI6wq6noGxP/200.gif" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+
+            <p data-i18n="homelabProject.intro"></p>
+
+                <div style="height: 20px;"></div>
+
+            <h2 data-i18n="homelabProject.servicesTitle"></h2>
+                <section class="services-section"> 
+        <div class="services-grid">
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://icon.icepanel.io/Technology/svg/Cloudflare.svg" alt="Cloudflare">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.cloudflareName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.cloudflareDesc"></p>
+            </div>
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/webp/booklore.webp" alt="Booklore">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.bookloreName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.bookloreDesc"></p>
+            </div>
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://avatars3.githubusercontent.com/u/8361145" alt="AdGuard">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.AdGuardName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.AdGuardDesc"></p>
+            </div>
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/navidrome.png" alt="Navidrome">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.navidromeName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.navidromeDesc"></p>
+            </div>
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/nginx-proxy-manager.png" alt="Nginx Proxy Manager">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.nginxProxyManagerName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.nginxProxyManagerDesc"></p>
+            </div>
+ 
+            <div class="service-card">
+                <div class="service-card__header">
+                    <div class="service-card__icon">
+                        <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/wireguard.webp" alt="WireGuard">
+                    </div>
+                    <h3 class="service-card__name" data-i18n="homelabProject.wireguardName"></h3>
+                </div>
+                <p class="service-card__desc" data-i18n="homelabProject.wireguardDesc"></p>
+            </div>
+        </div>
+    </section>
+            <!-- Dominio propio -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.domain_title"></strong>
+                <p data-i18n="homelabProject.domain_p1"></p>
+                <div style="height: 20px;"></div>
+
+                <p data-i18n="homelabProject.domain_p2"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="ddns.png"
+                     data-i18n-alt="homelabProject.domain_img_alt">
+            </div>
+            <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/favonia/cloudflare-ddns" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
+                <div style="height: 20px;"></div>
+
+            <!-- Proxy inverso -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.proxy_title"></strong>
+                <p data-i18n="homelabProject.proxy_p1"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="npm.png"
+                     data-i18n-alt="homelabProject.proxy_img_alt">
+            </div>
+            <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/NginxProxyManager/nginx-proxy-manager" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
+                <div style="height: 20px;"></div>
+                
+            <!-- AdGuard -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.adguard_title"></strong>
+                <p data-i18n="homelabProject.adguard_p1"></p>
+                <div style="height: 20px;"></div>
+
+                <p data-i18n="homelabProject.adguard_p2"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="dns.png"
+                     data-i18n-alt="homelabProject.adguard_img_alt">
+            </div>
+                        <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/AdguardTeam/AdGuardHome" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
+                <div style="height: 20px;"></div>
+
+            <!-- Libros -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.books_title"></strong>
+                <p data-i18n="homelabProject.books_p1"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="book.png"
+                     data-i18n-alt="homelabProject.books_img_alt">
+            </div>
+            <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/booklore-app/BookLore" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
+                <div style="height: 20px;"></div>
+
+            <!-- Música -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.music_title"></strong>
+                <p data-i18n="homelabProject.music_p1"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="music.png"
+                     data-i18n-alt="homelabProject.music_img_alt">
+            </div>
+            <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/navidrome/navidrome" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
+                <div style="height: 20px;"></div>
+            <!-- VPN -->
+            <div class="cansat-component">
+                <strong data-i18n="homelabProject.vpn_title"></strong>
+                <p data-i18n="homelabProject.vpn_p1"></p>
+                <img class="cansat-photo cansat-photo-big"
+                     src="vpn.png"
+                     data-i18n-alt="homelabProject.vpn_img_alt">
+            </div>
+            <div class="github-btn-wrap">
+                    <a class="github-btn" href="https://github.com/WireGuard/wireguard-linux" target="_blank" rel="noopener">
+                        <svg class="github-icon" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+                            0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
+                            1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95
+                            0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0
+                            1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15
+                            0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013
+                            8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+                        </svg>
+                        <span data-i18n="cansatProject.prog_download"></span>
+                    </a>
+                </div>
         </div>
     </main>
     <script src="../../script.js"></script>

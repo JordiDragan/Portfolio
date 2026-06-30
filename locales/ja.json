@@ -25,6 +25,7 @@
     },
     "projects": {
         "title": "プロジェクト",
+        "inProgressLabel": "建設中",
         "items": [
             {
                 "image": {
@@ -430,6 +431,41 @@
         "doc_p1": "これは私の先生に書いたレポートで、プロジェクトで行ったこととその作業について反思しています。この文書はカタロニア語で、翻訳されていません。",
         "doc_p2": "文書が見えませんか？",
         "doc_p3": "新しいタブで開いてください"
-
+    },
+    "homelabProject": {
+        "intro": "High Seas ハッカソンで 4GB の Raspberry Pi をもらいました。しばらく何に使うか分からず放置していましたが、ある日、自分の小さなホームラボを作って、抱えていた問題を解決したり必要なサービスを動かしたりしようと決めました。",
+        "servicesTitle": "導入済みサービス",
+        "domain_title": "独自ドメイン",
+        "domain_p1": "サーバーは GitHub Education プログラムを通じて Name.com で取得したドメインを使い、インターネットから外部アクセス可能な状態にしています。",
+        "domain_p2": "固定 IP の契約を避けるため、DDNS（Dynamic Domain Name Server）を構築しました。Name.com からの設定が複雑だったため Cloudflare にドメインを移管し、Timothy Miller が GitHub で公開しているスクリプトを使って、Raspberry Pi が数分おきに自分のパブリック IP を確認し DNS レコードを自動更新するようにしました。",
+        "proxy_title": "リバースプロキシ",
+        "proxy_p1": "サーバー上の各 Web アプリは競合を避けるためそれぞれ異なるポートで動いています。これらをインターネットから利用できるようにするため、Docker で Nginx リバースプロキシを立ち上げました。このコンテナを通じて、ポートに関係なく各サービスにルーティングでき、それぞれ独自のサブドメインを持っています。",
+        "adguard_title": "AdGuard",
+        "adguard_p1": "プライベートネットワーク内に独自の DNS サーバーを運用しており、広告・トラッカー・フィッシングサイトへのリクエストをフィルタリングしています。ネットワークを監視して不審な侵入者や望ましくない利用がないか確認することもできます。",
+        "adguard_p2": "ルーターの DHCP で DNS を変更できないという問題が発生したため、ルーターの DHCP を無効にして AdGuard 内蔵の DHCP を有効化しました。これにより、ネットワーク上のすべてのデバイスが保護されます。",
+        "books_title": "電子書籍",
+        "books_p1": "読書が好きで、現在日本語を勉強中です。学習方法のひとつとして読書を活用しているため、スマートフォンや iPad にダウンロードしなくてもどこからでも読めるよう、書籍を保存するサーバーを構築しました。Booklore を使用し、OIDC プロトコルでどこからでもライブラリにアクセスできます。",
+        "music_title": "音楽",
+        "music_p1": "これは断然最もよく使うサービスで、毎日利用しています。ストリーミングサービスの月額料金は高く、FLAC ファイルの音質は Spotify より優れていると気づいたため、Navidrome で自分専用の音楽サーバーを立ち上げました。唯一のデメリットは新しい音楽を発見するためのレコメンドアルゴリズムが使えなくなることですが、ストリーミングサービスに戻るほどの問題ではないと感じています。",
+        "vpn_title": "VPN",
+        "vpn_p1": "外部接続からローカルネットワークにアクセスできるよう、WireGuard を使って VPN を構築しました。これにより、世界中どこにいても AdGuard で広告をブロックした状態を維持できます。",
+        
+        "cloudflareName": "Cloudflare",
+        "cloudflareDesc": "DDoS保護機能とトラフィック監視を備えたダイナミックDNS",
+        
+        "bookloreName": "Booklore",
+        "bookloreDesc": "OIDC経由でアクセス可能な書籍サーバー",
+        
+        "AdGuardName": "AdGuard",
+        "AdGuardDesc": "広告、トラッカー、フィッシングサイトをブロックするプライベートDNS",
+        
+        "navidromeName": "Navidrome",
+        "navidromeDesc": "お気に入りの曲をすべてホストしている音楽サーバー",
+        
+        "nginxProxyManagerName": "Nginx Proxy Manager",
+        "nginxProxyManagerDesc": "複数のWebアプリケーションをホストするためのリバースプロキシ",
+        
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "外部からローカルネットワークにアクセスし、AdGuardを機能させるためのVPN"
     }
 }

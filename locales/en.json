@@ -25,6 +25,7 @@
     },
     "projects": {
         "title": "Projects",
+        "inProgressLabel": "Under construction",
         "items": [
             {
                 "image": {
@@ -430,5 +431,40 @@
         "doc_p1": "This is a report I wrote for my teacher, explaining what we did in the project and reflecting on the work. The document is in Catalan and does not have a translation.",
         "doc_p2": "Can't see the document?",
         "doc_p3": "Open it in a new tab"
+    },
+    "homelabProject": {
+        "intro": "At the High Seas hackathon I was given a 4GB Raspberry Pi. It sat unused for a while because I wasn't sure what to do with it, but one day I decided to build my own humble homelab to solve some problems I had and run services I needed.",
+        "servicesTitle": "Implemented Services",
+        "domain_title": "Custom Domain",
+        "domain_p1": "My server is accessible from the internet using a domain acquired through Name.com thanks to the GitHub Education program.",
+        "domain_p2": "To avoid paying for a static IP, I set up a DDNS (Dynamic Domain Name Server). I transferred the domain to Cloudflare since Name.com made it too complicated, and using a script developed by Timothy Miller on GitHub I made the Raspberry Pi check its public IP every few minutes and update the DNS records automatically.",
+        "proxy_title": "Reverse Proxy",
+        "proxy_p1": "Each web application on my server runs on a different port to avoid conflicts. To make them all accessible from the internet I set up an Nginx reverse proxy via Docker. Through this container I can route traffic to any service regardless of port, and each one gets its own subdomain.",
+        "adguard_title": "AdGuard",
+        "adguard_p1": "On my private network I run my own DNS server that filters requests to block ads, trackers and phishing pages. I can also monitor the network to detect any intruders or unwanted activity.",
+        "adguard_p2": "I ran into a problem with my router since it didn't allow me to change the DNS in the DHCP settings. I disabled its DHCP and enabled the one built into AdGuard so that every device on my network is protected.",
+        "books_title": "Books",
+        "books_p1": "I enjoy reading and I'm currently learning Japanese. One of the methods I use is reading, so I set up a server to store my books and read from anywhere without having to download them to my phone or iPad. I use Booklore and access my library from anywhere via the OIDC protocol.",
+        "music_title": "Music",
+        "music_p1": "This is by far the service I use the most — every single day. I realised streaming subscriptions were expensive and FLAC files offered better quality than Spotify, so I set up my own music server with Navidrome. The only downside is losing the recommendation algorithm that helps discover new music, but it's not a big enough deal to go back to a streaming service.",
+        "vpn_title": "VPN",
+        "vpn_p1": "To access my local network from an external connection I set up a VPN using WireGuard. As a bonus, I can have AdGuard blocking ads no matter where in the world I am.",
+        "cloudflareName": "Cloudflare",
+        "cloudflareDesc": "Dynamic DNS with DDoS protection and traffic monitoring",
+        
+        "bookloreName": "Booklore",
+        "bookloreDesc": "Book server with access via OIDC",
+        
+        "AdGuardName": "AdGuard",
+        "AdGuardDesc": "Private DNS to block ads, trackers, and phishing pages",
+        
+        "navidromeName": "Navidrome",
+        "navidromeDesc": "Music server where I host all my favorite songs",
+        
+        "nginxProxyManagerName": "Nginx Proxy Manager",
+        "nginxProxyManagerDesc": "Reverse proxy to host multiple web applications",
+        
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "VPN to access the local network from outside and keep AdGuard working"
     }
 }
