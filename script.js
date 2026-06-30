@@ -158,7 +158,7 @@ function getProjectLink(project) {
     return slug ? `proyectos/${slug}.html#${slug}` : '#proyectos';
 }
 
-const PROJECTS_NOT_IN_PROGRESS = ['cansat', 'homelab-pi'];
+const PROJECTS_IN_PROGRESS = ['hosting-vps-company-simulation', 'high-seas-hackathon'];
 
 function renderProjectCard(project, projects) {
     const image = project.image || {};
@@ -166,7 +166,7 @@ function renderProjectCard(project, projects) {
     const projectLink = getProjectLink(project);
     const projectTitle = project.title || '';
     const projectSlug = project.slug || slugifyProjectName(project.title);
-    const isInProgress = !PROJECTS_NOT_IN_PROGRESS.includes(projectSlug);
+    const isInProgress = PROJECTS_IN_PROGRESS.includes(projectSlug);
     const inProgressLabel = (projects && projects.inProgressLabel) || 'En construcción';
 
     return `
@@ -926,12 +926,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Cuando se vuelve con el boton "atras"/"adelante" del navegador (o el lateral
-// del raton), algunas paginas se restauran desde la bfcache tal cual estaban
-// en el momento de salir. Si en ese instante el contenido estaba con
-// opacity: 0 (fundido de entrada en curso), la pagina se queda invisible.
-// Nos aseguramos de que siempre se vea y, si hay una posicion pendiente de
-// restaurar, lo intentamos de nuevo.
 window.addEventListener('pageshow', (event) => {
     if (!event.persisted) return;
 
