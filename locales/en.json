@@ -432,6 +432,17 @@
         "doc_p2": "Can't see the document?",
         "doc_p3": "Open it in a new tab"
     },
+    "juiceGameJamProject": {
+        "intro_p1": "In early 2025, the Hack Club Slack buzzed about one of the biggest projects to date: a Game Jam where reaching 100 hours of work earned you funding for a trip to China.",
+        "intro_p2": "I'm interested in game development, and I've always loved Asian culture — visiting China has been one of my lifelong dreams, so this felt like the best thing that could happen to me.",
+        "idea_title": "The idea",
+        "idea_p1": "My goal was to make a multiplayer shooter in Godot — a big mistake, since half my hours ended up going into fixing bugs caused by player connections. The idea was a kind of 2D, top-down Counter-Strike deathmatch.",
+        "idea_p2": "I have a video from the earliest stages of the project showing two players connecting, moving their weapon, and how everything syncs between them.",
+        "fail_title": "The failure",
+        "fail_p1": "The main reason the game was never finished is that I tried to build a multiplayer game without any experience, and because of the deadline I had to patch the code in some pretty hacky ways. Every time I updated something, the multiplayer would break and I'd have to spend an entire evening fixing it — made worse by the fact that Godot's multiplayer was still fairly new, so documentation was scarce.",
+        "trip_title": "The trip to China",
+        "trip_p1": "Even though my game was unfinished, I reached the 100-hour goal the organizers asked for, so I got to fulfill my dream of going to China. It wasn't easy — the trip was long, tiring, and full of layovers. But in the end, after all those challenges, I had one of the best weeks of my life, meeting incredible people and having a great time. Below is a collection of photos from the trip."
+    },
     "homelabProject": {
         "intro": "At the High Seas hackathon I was given a 4GB Raspberry Pi. It sat unused for a while because I wasn't sure what to do with it, but one day I decided to build my own humble homelab to solve some problems I had and run services I needed.",
         "servicesTitle": "Implemented Services",

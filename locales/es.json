@@ -433,6 +433,17 @@
         "doc_p2": "¿No se ve el documento?",
         "doc_p3": "Ábrelo en una pestaña nueva"
     },
+    "juiceGameJamProject": {
+        "intro_p1": "A principios de 2025 en el Slack de Hack Club comentaron sobre uno de los proyectos más grandes hasta la fecha: una Game Jam en la cual si llegabas a 100 horas de trabajo te daban una ayuda monetaria para ir a China.",
+        "intro_p2": "A mi el desarrollo de videojuegos me interesa y desde siempre me ha encantado la cultura asiática y uno de mis sueños siempre ha sido visitar China, por lo que para mi era lo mejor que me podía pasar en la vida.",
+        "idea_title": "La idea",
+        "idea_p1": "Mi objetivo era hacer un videojuego multijugador de disparos en Godot, grave error ya que la mitad de horas fueron arreglando bugs debido a la conexión entre jugadores. La idea era hacer una especie de Deathmatch del Counter-Strike pero en 2D y en vista cenital.",
+        "idea_p2": "Tengo un vídeo de las fases más iniciales del proyecto enseñando como dos jugadores se conectan, pueden mover el arma y como se sincroniza todo entre jugadores.",
+        "fail_title": "El fracaso",
+        "fail_p1": "El motivo principal de porque el juego nunca fue acabado es que intenté hacer un juego multijugador sin experiencia y debido a la fecha límite tuve que hacer arreglos en el código un poco chapuzas y cada vez que actualizaba algo en el juego el multijugador se rompía y me tenía que pasar una tarde entera arreglándolo, ya que encima que el multijugador de Godot llevaba poco tiempo la documentación era escasa.",
+        "trip_title": "Viaje a China",
+        "trip_p1": "Aunque mi juego estuviera inacabado, llegué a la meta de las 100 horas que pedía la organización entonces pude cumplir mi sueño de ir a China, donde lo pasé muy mal ya que el viaje fue largo, cansado y con muchas escalas. Pero al final, después de tantos retos al final tuve una de las mejores semanas de mi vida donde conocí a gente increíble y me lo pasé en grande. A continuación dejo una colección de fotos del viaje."
+    },
     "homelabProject": {
         "intro": "En el hackathon de High Seas me regalaron una Raspberry Pi de 4GB. La tuve abandonada un tiempo porque no sabía qué hacer con ella, pero un día decidí montarme mi propio homelab humilde con la intención de solucionar algunos problemas que tenía o servicios que necesitaba.",
         "servicesTitle": "Servicios implementados",

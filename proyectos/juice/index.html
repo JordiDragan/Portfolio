@@ -24,7 +24,61 @@
             <div class="project-detail-kicker" data-i18n="projectPage.label">Proyecto</div>
             <h1 id="juice-game-jam">Juice Game Jam</h1>
             <p class="project-detail-description">Desarrollo de videojuego en una Game Jam con 100 horas de trabajo con un viaje financiado a Shanghái (China).</p>
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyenFpdWQ2dmFyaHJiejY4bzZscGxiOWdsMHA3OWczbHkyMmJ3d2sxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cfGmVRsJI6wq6noGxP/200.gif" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+                <div style="height: 20px;"></div>
+
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.intro_p1"></p>
+                <div style="height: 20px;"></div>
+
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.intro_p2"></p>
+                <div style="height: 20px;"></div>
+
+            <h2 data-i18n="juiceGameJamProject.idea_title">La idea</h2>
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.idea_p1"></p>
+                <div style="height: 20px;"></div>
+
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.idea_p2"></p>
+                <div style="height: 20px;"></div>
+
+            <div class="project-video-wrapper" style="margin: 20px auto; max-width: 600px;">
+                <video controls muted style="width: 100%; display: block;" poster="" src="juego.mp4" type="video/mp4">
+                    Tu navegador no soporta vídeo HTML5.
+                </video>
+            </div>
+                <div style="height: 20px;"></div>
+
+
+            <h2 data-i18n="juiceGameJamProject.fail_title">El fracaso</h2>
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.fail_p1"></p>
+                <div style="height: 20px;"></div>
+            <h2 data-i18n="juiceGameJamProject.trip_title">Viaje a China</h2>
+            <p class="project-detail-description" data-i18n="juiceGameJamProject.trip_p1"></p>
+                <div style="height: 20px;"></div>
+
+            <!--
+                Carrusel de fotos: arrastrable con el ratón/dedo y con botones de navegación.
+                Añade o quita <div class="carousel-slide"> para cambiar el número de fotos.
+                Cambia cada "src" por la ruta real de tu archivo (p. ej. Fotos/china1.jpg)
+            -->
+            <div class="photo-carousel" id="china-carousel" style="position: relative; max-width: 600px; margin: 0 auto; user-select: none;">
+                <div class="carousel-track-wrapper" style="overflow: hidden; border-radius: 10px;">
+                    <div class="carousel-track" id="carousel-track" style="display: flex; cursor: grab;">
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0498 (2).png" alt="Foto del viaje a China 1" draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0499.png" alt="Foto del viaje a China 2" draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0500.png" alt="Foto del viaje a China 3" draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0502.png" alt="Foto del viaje a China 4" draggable="false" style="width: 100%; height: 380px; object-fit: cover; object-position: top; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0503.png" alt="Foto del viaje a China 5" draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;"><img src="../../Fotos/china/IMG_0729.png" alt="Foto del viaje a China 6" draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></div>
+                        <div class="carousel-slide" style="flex: 0 0 100%;">
+                            <video src="../../Fotos/china/video.mp4" muted autoplay loop playsinline draggable="false" style="width: 100%; height: 380px; object-fit: cover; display: block;"></video>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="carousel-prev" aria-label="Foto anterior" style="position: absolute; top: 50%; left: 10px; transform: translateY(-50%); width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;">‹</button>
+                <button id="carousel-next" aria-label="Foto siguiente" style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%); width: 40px; height: 40px; border: none; border-radius: 50%; background: rgba(0,0,0,0.55); color: #fff; font-size: 20px; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center;">›</button>
+
+                <div id="carousel-dots" style="display: flex; justify-content: center; gap: 8px; margin-top: 12px;"></div>
+            </div>
         </div>
     </main>
     <script src="../../script.js"></script>
@@ -40,6 +94,91 @@
                 window.location.href = href;
             }, 110);
         });
+
+        // Carrusel de fotos: arrastrable (ratón/táctil) + botones + puntos
+        (function () {
+            const track = document.getElementById('carousel-track');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const dotsWrap = document.getElementById('carousel-dots');
+            if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+            const slides = Array.from(track.children);
+            let index = 0;
+            let isDragging = false;
+            let startX = 0;
+            let startTranslate = 0;
+            let currentTranslate = 0;
+
+            // Crear los puntos indicadores
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+                dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:' + (i === 0 ? '#fff' : 'rgba(255,255,255,0.4)') + ';padding:0;';
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function updateDots() {
+                Array.from(dotsWrap.children).forEach((dot, i) => {
+                    dot.style.background = i === index ? '#fff' : 'rgba(255,255,255,0.4)';
+                });
+            }
+
+            function goTo(i) {
+                index = Math.max(0, Math.min(slides.length - 1, i));
+                currentTranslate = -index * track.clientWidth;
+                track.style.transition = 'transform 0.3s ease';
+                track.style.transform = 'translateX(' + currentTranslate + 'px)';
+                updateDots();
+            }
+
+            prevBtn.addEventListener('click', () => goTo(index - 1));
+            nextBtn.addEventListener('click', () => goTo(index + 1));
+
+            function dragStart(clientX) {
+                isDragging = true;
+                startX = clientX;
+                startTranslate = -index * track.clientWidth;
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            }
+
+            function dragMove(clientX) {
+                if (!isDragging) return;
+                const delta = clientX - startX;
+                track.style.transform = 'translateX(' + (startTranslate + delta) + 'px)';
+            }
+
+            function dragEnd(clientX) {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.cursor = 'grab';
+                const delta = clientX - startX;
+                const threshold = track.clientWidth * 0.15;
+                if (delta < -threshold && index < slides.length - 1) {
+                    index++;
+                } else if (delta > threshold && index > 0) {
+                    index--;
+                }
+                goTo(index);
+            }
+
+            // Ratón
+            track.addEventListener('mousedown', (e) => dragStart(e.clientX));
+            window.addEventListener('mousemove', (e) => dragMove(e.clientX));
+            window.addEventListener('mouseup', (e) => dragEnd(e.clientX));
+
+            // Táctil
+            track.addEventListener('touchstart', (e) => dragStart(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchmove', (e) => dragMove(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchend', (e) => dragEnd(e.changedTouches[0].clientX));
+
+            // Recalcular posición si cambia el tamaño de la ventana
+            window.addEventListener('resize', () => goTo(index));
+
+            goTo(0);
+        })();
     </script>
 </body>
 </html>
