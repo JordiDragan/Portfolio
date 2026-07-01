@@ -50,10 +50,10 @@
             {
                 "image": {
                     "src": "Fotos/iemhosting.png",
-                    "alt": "ホスティング会社のシミュレーション"
+                    "alt": "ホスティングおよびVPS企業シミュレーション"
                 },
                 "slug": "hosting-vps-company-simulation",
-                "title": "ホスティング・VPS 企業シミュレーション",
+                "title": "ホスティングおよびVPS企業シミュレーション",
                 "description": "VLAN 設定、ファイアウォール、ルーティング、Proxmox による仮想化を含む、ホスティング企業の完全なインフラシミュレーション。",
                 "badges": [
                     "Cisco",
@@ -262,7 +262,7 @@
                     },
                     {
                         "label": "FreePBX",
-                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/freepbx.png"
                     },
                     {
                         "label": "Squid Proxy",
@@ -460,23 +460,70 @@
         "music_p1": "これは断然最もよく使うサービスで、毎日利用しています。ストリーミングサービスの月額料金は高く、FLAC ファイルの音質は Spotify より優れていると気づいたため、Navidrome で自分専用の音楽サーバーを立ち上げました。唯一のデメリットは新しい音楽を発見するためのレコメンドアルゴリズムが使えなくなることですが、ストリーミングサービスに戻るほどの問題ではないと感じています。",
         "vpn_title": "VPN",
         "vpn_p1": "外部接続からローカルネットワークにアクセスできるよう、WireGuard を使って VPN を構築しました。これにより、世界中どこにいても AdGuard で広告をブロックした状態を維持できます。",
-        
         "cloudflareName": "Cloudflare",
         "cloudflareDesc": "DDoS保護機能とトラフィック監視を備えたダイナミックDNS",
-        
         "bookloreName": "Booklore",
         "bookloreDesc": "OIDC経由でアクセス可能な書籍サーバー",
-        
         "AdGuardName": "AdGuard",
         "AdGuardDesc": "広告、トラッカー、フィッシングサイトをブロックするプライベートDNS",
-        
         "navidromeName": "Navidrome",
         "navidromeDesc": "お気に入りの曲をすべてホストしている音楽サーバー",
-        
         "nginxProxyManagerName": "Nginx Proxy Manager",
         "nginxProxyManagerDesc": "複数のWebアプリケーションをホストするためのリバースプロキシ",
-        
         "wireguardName": "WireGuard",
         "wireguardDesc": "外部からローカルネットワークにアクセスし、AdGuardを機能させるためのVPN"
+    },
+    "hosting": {
+        "intro": "ASIRの2年次の最終プロジェクトとして、私たちは独自のホスティング会社を設立し、顧客サポートの提供、サーバーとネットワークインフラの保守を行うという課題に取り組みました。",
+        "servicesTitle": "実施されたサービス",
+        "carouselTitle": "導入された主な技術",
+        "ubuntuServerName": "Ubuntu Server",
+        "ubuntuServerDesc": "サービスやアプリケーションをホストするメインのLinuxサーバー",
+        "windowsServerName": "Windows Server",
+        "windowsServerDesc": "ドメインとネットワークリソースを管理するサーバーOS",
+        "postfixName": "Postfix",
+        "postfixDesc": "メール送信を行うメール転送エージェント（MTA）",
+        "dovecotName": "Dovecot",
+        "dovecotDesc": "メールの受信・管理を行うIMAP/POP3サーバー",
+        "ubiquitiName": "Ubiquiti",
+        "ubiquitiDesc": "アクセスポイントやスイッチ用のプロフェッショナルなネットワーク機器",
+        "snmpName": "SNMP",
+        "snmpDesc": "ネットワーク機器の状態を監視するためのプロトコル",
+        "ciscoName": "Cisco",
+        "ciscoDesc": "ルーティングとスイッチングのためのプロフェッショナルネットワーク機器",
+        "dockerName": "Docker",
+        "dockerDesc": "アプリケーションを軽量にデプロイ・隔離するコンテナ",
+        "kubernetesName": "Kubernetes",
+        "kubernetesDesc": "大規模なデプロイを管理するコンテナオーケストレーター",
+        "apacheName": "Apache",
+        "apacheDesc": "サイトやアプリケーションをホストするWebサーバー",
+        "wiresharkName": "Wireshark",
+        "wiresharkDesc": "トラフィックのデバッグと監査を行うネットワークプロトコルアナライザ",
+        "raspberryPiName": "Raspberry Pi",
+        "raspberryPiDesc": "低消費電力サーバーとして使用するミニコンピュータ",
+        "wordpressName": "WordPress",
+        "wordpressDesc": "会社のWebサイト用コンテンツ管理システム",
+        "glpiName": "GLPI",
+        "glpiDesc": "資産管理とサポートチケットを管理するシステム",
+        "freepbxName": "FreePBX",
+        "freepbxDesc": "会社の通話を管理するIP電話システム",
+        "shinobiName": "Shinobi",
+        "shinobiDesc": "防犯カメラ用の映像監視システム（NVR）",
+        "jitsiMeetName": "Jitsi Meet",
+        "jitsiMeetDesc": "社内会議用のセルフホスト型ビデオ会議プラットフォーム",
+        "phpMyAdminName": "phpMyAdmin",
+        "phpMyAdminDesc": "MySQL/MariaDBデータベースを管理するWebインターフェース",
+        "roundcubeName": "Roundcube",
+        "roundcubeDesc": "ブラウザからメールにアクセスできるWebメールクライアント",
+        "pythonName": "Python",
+        "pythonDesc": "管理タスクの自動化やスクリプトに使用する言語",
+        "proxmoxName": "Proxmox",
+        "proxmoxDesc": "インフラのサーバーを仮想化するハイパーバイザー",
+        "activeDirectoryName": "Active Directory",
+        "activeDirectoryDesc": "ユーザー、コンピューター、権限を管理するディレクトリサービス",
+        "mikrotikName": "Mikrotik",
+        "mikrotikDesc": "ルーティングとVLANのためのルーター・ネットワーク機器",
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "内部ネットワークへの安全なリモートアクセス用VPN"
     }
 }

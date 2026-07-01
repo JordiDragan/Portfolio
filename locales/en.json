@@ -50,10 +50,10 @@
             {
                 "image": {
                     "src": "Fotos/iemhosting.png",
-                    "alt": "Hosting company simulation"
+                    "alt": "Hosting and VPS company simulation"
                 },
                 "slug": "hosting-vps-company-simulation",
-                "title": "Hosting & VPS Company Simulation",
+                "title": "Hosting and VPS company simulation",
                 "description": "Full infrastructure simulation of a hosting company including VLAN configuration, firewall, routing and virtualisation with Proxmox.",
                 "badges": [
                     "Cisco",
@@ -262,7 +262,7 @@
                     },
                     {
                         "label": "FreePBX",
-                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/freepbx.png"
                     },
                     {
                         "label": "Squid Proxy",
@@ -462,20 +462,68 @@
         "vpn_p1": "To access my local network from an external connection I set up a VPN using WireGuard. As a bonus, I can have AdGuard blocking ads no matter where in the world I am.",
         "cloudflareName": "Cloudflare",
         "cloudflareDesc": "Dynamic DNS with DDoS protection and traffic monitoring",
-        
         "bookloreName": "Booklore",
         "bookloreDesc": "Book server with access via OIDC",
-        
         "AdGuardName": "AdGuard",
         "AdGuardDesc": "Private DNS to block ads, trackers, and phishing pages",
-        
         "navidromeName": "Navidrome",
         "navidromeDesc": "Music server where I host all my favorite songs",
-        
         "nginxProxyManagerName": "Nginx Proxy Manager",
         "nginxProxyManagerDesc": "Reverse proxy to host multiple web applications",
-        
         "wireguardName": "WireGuard",
         "wireguardDesc": "VPN to access the local network from outside and keep AdGuard working"
+    },
+    "hosting": {
+        "intro": "As a final project in the 2nd year of ASIR, we were tasked with creating our own hosting company, providing customer support, maintaining servers, and managing the network infrastructure.",
+        "servicesTitle": "Services Implemented",
+        "carouselTitle": "Main Technologies Implemented",
+        "ubuntuServerName": "Ubuntu Server",
+        "ubuntuServerDesc": "Main Linux server used to host services and applications",
+        "windowsServerName": "Windows Server",
+        "windowsServerDesc": "Server operating system to manage the domain and network resources",
+        "postfixName": "Postfix",
+        "postfixDesc": "Mail transport agent (MTA) for sending emails",
+        "dovecotName": "Dovecot",
+        "dovecotDesc": "IMAP/POP3 server for receiving and managing mail",
+        "ubiquitiName": "Ubiquiti",
+        "ubiquitiDesc": "Professional network equipment for access points and switches",
+        "snmpName": "SNMP",
+        "snmpDesc": "Monitoring protocol to keep track of network device status",
+        "ciscoName": "Cisco",
+        "ciscoDesc": "Professional network equipment for routing and switching",
+        "dockerName": "Docker",
+        "dockerDesc": "Containers to deploy and isolate applications lightweightly",
+        "kubernetesName": "Kubernetes",
+        "kubernetesDesc": "Container orchestrator to manage large-scale deployments",
+        "apacheName": "Apache",
+        "apacheDesc": "Web server to host websites and applications",
+        "wiresharkName": "Wireshark",
+        "wiresharkDesc": "Network protocol analyser for debugging and auditing traffic",
+        "raspberryPiName": "Raspberry Pi",
+        "raspberryPiDesc": "Mini computer used as a low-power server",
+        "wordpressName": "WordPress",
+        "wordpressDesc": "Content management system for the company website",
+        "glpiName": "GLPI",
+        "glpiDesc": "Inventory management and IT support ticketing system",
+        "freepbxName": "FreePBX",
+        "freepbxDesc": "IP phone system to manage company calls",
+        "shinobiName": "Shinobi",
+        "shinobiDesc": "Video surveillance system (NVR) for the security cameras",
+        "jitsiMeetName": "Jitsi Meet",
+        "jitsiMeetDesc": "Self-hosted video conferencing platform for internal meetings",
+        "phpMyAdminName": "phpMyAdmin",
+        "phpMyAdminDesc": "Web interface to manage the MySQL/MariaDB databases",
+        "roundcubeName": "Roundcube",
+        "roundcubeDesc": "Webmail client to access email from the browser",
+        "pythonName": "Python",
+        "pythonDesc": "Language used to automate tasks and admin scripts",
+        "proxmoxName": "Proxmox",
+        "proxmoxDesc": "Hypervisor to virtualise the infrastructure's servers",
+        "activeDirectoryName": "Active Directory",
+        "activeDirectoryDesc": "Directory service to manage users, computers and permissions",
+        "mikrotikName": "Mikrotik",
+        "mikrotikDesc": "Router and network equipment for routing and VLANs",
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "VPN for secure remote access to the internal network"
     }
 }

@@ -158,7 +158,7 @@ function getProjectLink(project) {
     return slug ? `proyectos/${slug}.html#${slug}` : '#proyectos';
 }
 
-const PROJECTS_IN_PROGRESS = ['hosting-vps-company-simulation', 'high-seas-hackathon'];
+const PROJECTS_IN_PROGRESS = ['high-seas-hackathon'];
 
 function renderProjectCard(project, projects) {
     const image = project.image || {};

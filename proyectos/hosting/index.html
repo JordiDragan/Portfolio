@@ -9,6 +9,142 @@
     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../styles.css">
 </head>
+        <style>
+        .cansat-photo {
+            width: 100%;
+            max-width: 480px;
+            display: block;
+            margin: 16px auto 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        }
+        .cansat-photo-small {
+            max-width: 320px;
+        }
+        .cansat-photo-big {
+            max-width: 940px;
+        }
+        .cansat-gallery-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin: 16px 0 24px;
+        }
+        .cansat-gallery-row .cansat-photo {
+            margin: 0;
+            flex: 1 1 240px;
+            max-width: 320px;
+        }
+        .cansat-component {
+            margin-bottom: 28px;
+        }
+        .cansat-component strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 1.02em;
+        }
+        .cansat-specs {
+            margin-left: 20px;
+            margin-bottom: 16px;
+        }
+        @media (max-width: 640px) {
+            .cansat-gallery-row {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .services-section {
+            padding: 48px 40px;
+            font-family: "Poppins", system-ui, sans-serif;
+        }
+
+        .services-section__title {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 20px 0;
+        }
+
+        .services-section__divider {
+            border: none;
+            border-top: 1px dashed #3a3a3a;
+            margin: 0 0 32px 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .service-card {
+            background: black;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 20px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .service-card:hover {
+            border-color: #444444;
+            transform: translateY(-2px);
+        }
+
+        .service-card__header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .service-card__icon {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .service-card__icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .service-card__name {
+            color: #ffffff;
+            font-size: 17px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .service-card__desc {
+            color: #a3a3a3;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Responsive: 2 columnas en tablet, 1 en móvil */
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .services-section {
+                padding: 32px 20px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 <body class="project-page" data-project-slug="hosting-vps-company-simulation" data-locales-path="../../locales">
     <nav>
         <a class="nav-logo" href="../../" data-i18n="brand"></a>
@@ -22,9 +158,255 @@
         <div class="project-detail-card">
             <a class="project-back-link" href="../../" data-i18n="projectPage.back">← Volver a proyectos</a>
             <div class="project-detail-kicker" data-i18n="projectPage.label">Proyecto</div>
-            <h1 id="hosting-vps-company-simulation">Hosting & VPS Company Simulation</h1>
-            <p class="project-detail-description">Simulación completa de infraestructura de empresa de hosting con configuración de VLANs, firewall, routing y virtualización con Proxmox.</p>
-            <img src="https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyenFpdWQ2dmFyaHJiejY4bzZscGxiOWdsMHA3OWczbHkyMmJ3d2sxdiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/cfGmVRsJI6wq6noGxP/200.gif" style="width: 100%; max-width: 600px; display: block; margin: 20px auto;">
+            <h1 id="hosting-vps-company-simulation"></h1>
+            <p data-i18n="hosting.intro"></p>
+                <div style="height: 20px;"></div>
+                            <h2 data-i18n="hosting.carouselTitle"></h2>
+
+            <section class="services-section"> 
+                                        <div class="services-grid">
+
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://icon.icepanel.io/Technology/svg/Ubuntu.svg" alt="Ubuntu Server">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.ubuntuServerName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.ubuntuServerDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Windows_icon_logo.png" alt="Windows Server">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.windowsServerName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.windowsServerDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://api.iconify.design/lucide:mail.svg?color=%23ffffff" alt="Postfix">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.postfixName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.postfixDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/dovecot.png" alt="Dovecot">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.dovecotName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.dovecotDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/ubiquiti-unifi.png" alt="Ubiquiti">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.ubiquitiName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.ubiquitiDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://api.iconify.design/lucide:activity.svg?color=%23ffffff" alt="SNMP">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.snmpName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.snmpDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/1280px-Cisco_logo_blue_2016.svg.png" alt="Cisco">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.ciscoName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.ciscoDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/docker-icon.png" alt="Docker">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.dockerName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.dockerDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/kubernetes-icon.png" alt="Kubernetes">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.kubernetesName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.kubernetesDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://icon.icepanel.io/Technology/svg/Apache.svg" alt="Apache">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.apacheName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.apacheDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireshark.png" alt="Wireshark">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.wiresharkName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.wiresharkDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/raspberry-pi-logo_resized_256.png" alt="Raspberry Pi">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.raspberryPiName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.raspberryPiDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" alt="WordPress">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.wordpressName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.wordpressDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://www.tecnicascompetitivas.com/wp-content/uploads/2024/10/icon-glpi.png" alt="GLPI">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.glpiName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.glpiDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/freepbx.png" alt="FreePBX">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.freepbxName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.freepbxDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/shinobi.png" alt="Shinobi">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.shinobiName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.shinobiDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/jitsi-meet.png" alt="Jitsi Meet">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.jitsiMeetName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.jitsiMeetDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/phpmyadmin.png" alt="phpMyAdmin">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.phpMyAdminName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.phpMyAdminDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/roundcube.png" alt="Roundcube">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.roundcubeName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.roundcubeDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/960px-Python-logo-notext.svg.png" alt="Python">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.pythonName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.pythonDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/proxmox.png" alt="Proxmox">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.proxmoxName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.proxmoxDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.freebiesupply.com/logos/large/2x/azure-active-directory-logo-svg-vector.svg" alt="Active Directory">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.activeDirectoryName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.activeDirectoryDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://data-discourse.cdn.mikrotik.com/App_Winbox.webp" alt="Mikrotik">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.mikrotikName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.mikrotikDesc"></p>
+                        </div>
+            
+                        <div class="service-card">
+                            <div class="service-card__header">
+                                <div class="service-card__icon">
+                                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/wireguard.png" alt="WireGuard">
+                                </div>
+                                <h3 class="service-card__name" data-i18n="hosting.wireguardName"></h3>
+                            </div>
+                            <p class="service-card__desc" data-i18n="hosting.wireguardDesc"></p>
+                        </div>
+                    </div>
+                </section>
         </div>
     </main>
     <script src="../../script.js"></script>
@@ -40,6 +422,91 @@
                 window.location.href = href;
             }, 110);
         });
+
+        // Carrusel de fotos: arrastrable (ratón/táctil) + botones + puntos
+        (function () {
+            const track = document.getElementById('carousel-track');
+            const prevBtn = document.getElementById('carousel-prev');
+            const nextBtn = document.getElementById('carousel-next');
+            const dotsWrap = document.getElementById('carousel-dots');
+            if (!track || !prevBtn || !nextBtn || !dotsWrap) return;
+
+            const slides = Array.from(track.children);
+            let index = 0;
+            let isDragging = false;
+            let startX = 0;
+            let startTranslate = 0;
+            let currentTranslate = 0;
+
+            // Crear los puntos indicadores
+            slides.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.setAttribute('aria-label', 'Ir a la foto ' + (i + 1));
+                dot.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:' + (i === 0 ? '#fff' : 'rgba(255,255,255,0.4)') + ';padding:0;';
+                dot.addEventListener('click', () => goTo(i));
+                dotsWrap.appendChild(dot);
+            });
+
+            function updateDots() {
+                Array.from(dotsWrap.children).forEach((dot, i) => {
+                    dot.style.background = i === index ? '#fff' : 'rgba(255,255,255,0.4)';
+                });
+            }
+
+            function goTo(i) {
+                index = Math.max(0, Math.min(slides.length - 1, i));
+                currentTranslate = -index * track.clientWidth;
+                track.style.transition = 'transform 0.3s ease';
+                track.style.transform = 'translateX(' + currentTranslate + 'px)';
+                updateDots();
+            }
+
+            prevBtn.addEventListener('click', () => goTo(index - 1));
+            nextBtn.addEventListener('click', () => goTo(index + 1));
+
+            function dragStart(clientX) {
+                isDragging = true;
+                startX = clientX;
+                startTranslate = -index * track.clientWidth;
+                track.style.transition = 'none';
+                track.style.cursor = 'grabbing';
+            }
+
+            function dragMove(clientX) {
+                if (!isDragging) return;
+                const delta = clientX - startX;
+                track.style.transform = 'translateX(' + (startTranslate + delta) + 'px)';
+            }
+
+            function dragEnd(clientX) {
+                if (!isDragging) return;
+                isDragging = false;
+                track.style.cursor = 'grab';
+                const delta = clientX - startX;
+                const threshold = track.clientWidth * 0.15;
+                if (delta < -threshold && index < slides.length - 1) {
+                    index++;
+                } else if (delta > threshold && index > 0) {
+                    index--;
+                }
+                goTo(index);
+            }
+
+            // Ratón
+            track.addEventListener('mousedown', (e) => dragStart(e.clientX));
+            window.addEventListener('mousemove', (e) => dragMove(e.clientX));
+            window.addEventListener('mouseup', (e) => dragEnd(e.clientX));
+
+            // Táctil
+            track.addEventListener('touchstart', (e) => dragStart(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchmove', (e) => dragMove(e.touches[0].clientX), { passive: true });
+            track.addEventListener('touchend', (e) => dragEnd(e.changedTouches[0].clientX));
+
+            // Recalcular posición si cambia el tamaño de la ventana
+            window.addEventListener('resize', () => goTo(index));
+
+            goTo(0);
+        })();
     </script>
 </body>
 </html>

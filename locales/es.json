@@ -51,7 +51,7 @@
             {
                 "image": {
                     "src": "Fotos/iemhosting.png",
-                    "alt": "Simulación empresa de hosting"
+                    "alt": "Simulación empresa de hosting y VPS"
                 },
                 "slug": "hosting-vps-company-simulation",
                 "title": "Simulación empresa de hosting y VPS",
@@ -263,7 +263,7 @@
                     },
                     {
                         "label": "FreePBX",
-                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/freepbx.svg"
+                        "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/freepbx.png"
                     },
                     {
                         "label": "Squid Proxy",
@@ -463,23 +463,68 @@
         "vpn_p1": "Para poder tener acceso a mi red local desde una conexión externa decidí montarme una VPN usando WireGuard. Además, así puedo tener el AdGuard bloqueando anuncios desde cualquier parte del mundo.",
         "cloudflareName": "Cloudflare",
         "cloudflareDesc": "DNS dinámico con protección DDoS y monitoreo de tráfico",
-        
         "bookloreName": "Booklore",
         "bookloreDesc": "Servidor de libros con acceso mediante OIDC",
-        
         "AdGuardName": "AdGuard",
         "AdGuardDesc": "DNS privado para bloquear anuncios, rastreadores y páginas de phishing",
-        
         "navidromeName": "Navidrome",
         "navidromeDesc": "Servidor de música donde alojo todas mis canciones favoritas",
-        
         "nginxProxyManagerName": "Nginx Proxy Manager",
         "nginxProxyManagerDesc": "Proxy inverso para alojar múltiples aplicaciones web",
-        
         "wireguardName": "WireGuard",
         "wireguardDesc": "VPN para acceder a la red local desde fuera y tener el AdGuard funcionando"
-    
-        
-    
+    },
+    "hosting": {
+        "intro": "Como proyecto de fin de clase en 2º de ASIR nos hicieron crear nuestra propia empresa de hosting, ofreciendo soporte a los clientes, manteniendo los servidores y la infraestructura de red.",
+        "servicesTitle": "Servicios implementados",
+        "carouselTitle": "Técnologias principales implementadas",
+        "ubuntuServerName": "Ubuntu Server",
+        "ubuntuServerDesc": "Servidor Linux principal para alojar servicios y aplicaciones",
+        "windowsServerName": "Windows Server",
+        "windowsServerDesc": "Sistema operativo servidor para gestionar el dominio y los recursos de red",
+        "postfixName": "Postfix",
+        "postfixDesc": "Agente de transporte de correo (MTA) para el envío de emails",
+        "dovecotName": "Dovecot",
+        "dovecotDesc": "Servidor IMAP/POP3 para la recepción y gestión del correo",
+        "ubiquitiName": "Ubiquiti",
+        "ubiquitiDesc": "Equipamiento de red profesional para puntos de acceso y switches",
+        "snmpName": "SNMP",
+        "snmpDesc": "Protocolo de monitorización para supervisar el estado de los dispositivos de red",
+        "ciscoName": "Cisco",
+        "ciscoDesc": "Equipos de red profesionales para el enrutamiento y la conmutación",
+        "dockerName": "Docker",
+        "dockerDesc": "Contenedores para desplegar y aislar aplicaciones de forma ligera",
+        "kubernetesName": "Kubernetes",
+        "kubernetesDesc": "Orquestador de contenedores para gestionar el despliegue a gran escala",
+        "apacheName": "Apache",
+        "apacheDesc": "Servidor web para alojar sitios y aplicaciones",
+        "wiresharkName": "Wireshark",
+        "wiresharkDesc": "Analizador de protocolos de red para depurar y auditar el tráfico",
+        "raspberryPiName": "Raspberry Pi",
+        "raspberryPiDesc": "Mini ordenador usado como servidor de bajo consumo",
+        "wordpressName": "WordPress",
+        "wordpressDesc": "Gestor de contenidos para el sitio web corporativo",
+        "glpiName": "GLPI",
+        "glpiDesc": "Sistema de gestión de inventario y tickets de soporte técnico",
+        "freepbxName": "FreePBX",
+        "freepbxDesc": "Central telefónica IP para la gestión de llamadas de la empresa",
+        "shinobiName": "Shinobi",
+        "shinobiDesc": "Sistema de videovigilancia (NVR) para las cámaras de seguridad",
+        "jitsiMeetName": "Jitsi Meet",
+        "jitsiMeetDesc": "Plataforma de videoconferencia autoalojada para reuniones internas",
+        "phpMyAdminName": "phpMyAdmin",
+        "phpMyAdminDesc": "Interfaz web para administrar las bases de datos MySQL/MariaDB",
+        "roundcubeName": "Roundcube",
+        "roundcubeDesc": "Cliente de correo web para acceder al email desde el navegador",
+        "pythonName": "Python",
+        "pythonDesc": "Lenguaje usado para automatizar tareas y scripts de administración",
+        "proxmoxName": "Proxmox",
+        "proxmoxDesc": "Hipervisor para virtualizar los servidores de la infraestructura",
+        "activeDirectoryName": "Active Directory",
+        "activeDirectoryDesc": "Servicio de directorio para gestionar usuarios, equipos y permisos",
+        "mikrotikName": "Mikrotik",
+        "mikrotikDesc": "Router y equipos de red para el enrutamiento y las VLAN",
+        "wireguardName": "WireGuard",
+        "wireguardDesc": "VPN para el acceso remoto seguro a la red interna"
     }
 }
