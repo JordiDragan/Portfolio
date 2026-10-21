@@ -241,6 +241,8 @@ function renderExperienceItem(item) {
                 <div>
                     <h3 class="experiencia-title">${escapeHtml(item.title || '')}</h3>
                     <p class="experiencia-empresa">${escapeHtml(item.company || '')}</p>
+                    ${item.employmentType ? `<p class="experiencia-metadata">${escapeHtml(item.employmentType)}</p>` : ''}
+                    ${item.location ? `<p class="experiencia-metadata">${escapeHtml(item.location)}</p>` : ''}
                 </div>
                 <div class="experiencia-dates">${escapeHtml(item.dates || '')}</div>
             </div>

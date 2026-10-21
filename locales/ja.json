@@ -305,6 +305,29 @@
         "title": "職務経歴",
         "items": [
             {
+                "title": "IT技術者（CaixaBankプロジェクト）",
+                "company": "Bigmatic",
+                "employmentType": "フルタイム",
+                "dates": "2026年9月 - 現在",
+                "location": "スペイン・カタルーニャ州タラゴナ · 現地勤務",
+                "tasks": [
+                    "タラゴナ県およびバルセロナ県のCaixaBank支店におけるアクセスポイント（AP）更新プロジェクト"
+                ]
+            },
+            {
+                "title": "IT技術者",
+                "company": "マス・ダンリック刑務所",
+                "employmentType": "フルタイム",
+                "dates": "2026年8月 - 9月",
+                "location": "スペイン・カタルーニャ州エル・カトリャール · 現地勤務",
+                "tasks": [
+                    "収容者用ビデオ通話ブースの修理",
+                    "施設職員へのITサポート",
+                    "チケットの管理と対応",
+                    "対面および電話でのサポート"
+                ]
+            },
+            {
                 "title": "IT技術者（インターンシップ）",
                 "company": "Informàtica Ràpita",
                 "dates": "2025年6月 – 7月",

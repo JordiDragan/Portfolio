@@ -214,11 +214,11 @@
                     },
                     {
                         "label": "Routing",
-                        "icon": "https://api.iconify.design/lucide:route.svg?color=%23ffffff"
+                        "icon": "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221em%22 height=%221em%22 viewBox=%220 0 20 20%22%3E%3Cpath d=%22M0 0h20v20H0z%22 fill=%22none%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M17.709 11.25a.625.625 0 0 0-.625-.625H2.918a.625.625 0 0 0-.625.625v3.333c0 .346.28.625.625.625h14.166c.346 0 .625-.28.625-.625zm1.25 3.333a1.874 1.874 0 0 1-1.875 1.875H2.918a1.874 1.874 0 0 1-1.875-1.875V11.25c0-1.035.838-1.875 1.875-1.875h14.166c1.037 0 1.875.84 1.875 1.875z%22/%3E%3Cpath fill=%22%23ffffff%22 d=%22M3.162 3.567a.625.625 0 0 1 .773.429l1.667 5.833l-1.202.344L2.733 4.34a.625.625 0 0 1 .43-.773m13.677 0c.332.095.523.44.429.773l-1.667 5.833l-1.202-.344l1.667-5.833a.625.625 0 0 1 .773-.429M5.001 12.708a.208.208 0 1 0 .041.004zm1.042.209a1.042 1.042 0 1 1-2.083-.001a1.042 1.042 0 0 1 2.083.001m1.458-.209a.208.208 0 1 0 .041.004zm1.042.209a1.042 1.042 0 1 1-2.083-.001a1.042 1.042 0 0 1 2.083.001%22/%3E%3C/svg%3E"
                     },
                     {
                         "label": "Switching",
-                        "icon": "https://api.iconify.design/lucide:network.svg?color=%23ffffff"
+                        "icon": "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221em%22 height=%221em%22 viewBox=%220 0 36 36%22%3E%3Cpath d=%22M0 0h36v36H0z%22 fill=%22none%22/%3E%3Cpath fill=%22%23fff%22 d=%22M33.91 18.47L30.78 8.41A2 2 0 0 0 28.87 7H7.13a2 2 0 0 0-1.91 1.41L2.09 18.48a2 2 0 0 0-.09.59V27a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2v-7.94a2 2 0 0 0-.09-.59M32 27H4v-7.94L7.13 9h21.74L32 19.06Z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M7.12 22h1.8v3h-1.8z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M12.12 22h1.8v3h-1.8z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M17.11 22h1.8v3h-1.8z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M22.1 22h1.8v3h-1.8z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M27.1 22h1.8v3h-1.8z%22/%3E%3Cpath fill=%22%23fff%22 d=%22M6.23 18h23.69v1.4H6.23z%22/%3E%3Cpath d=%22M0 0h36v36H0z%22 fill=%22none%22/%3E%3C/svg%3E"
                     },
                     {
                         "label": "Ubiquiti Unifi",
@@ -305,6 +305,29 @@
     "experience": {
         "title": "Experiencia Laboral",
         "items": [
+            {
+                "title": "Técnico informático (Proyecto CaixaBank)",
+                "company": "Bigmatic",
+                "employmentType": "Jornada completa",
+                "dates": "Septiembre 2026 - Actualidad",
+                "location": "Tarragona, Cataluña, España · Presencial",
+                "tasks": [
+                    "Proyecto de renovación de puntos de acceso (APs) en las oficinas de CaixaBank de las provincias de Tarragona y Barcelona"
+                ]
+            },
+            {
+                "title": "Técnico informático",
+                "company": "Centro Penitenciario de Mas d'Enric",
+                "employmentType": "Jornada completa",
+                "dates": "Agosto - Septiembre 2026",
+                "location": "El Catllar, Cataluña, España · Presencial",
+                "tasks": [
+                    "Reparación de cabinas de videollamadas para internos",
+                    "Soporte informático para los funcionarios del centro",
+                    "Gestión y resolución de tickets",
+                    "Atención presencial y telefónica"
+                ]
+            },
             {
                 "title": "Técnico Informático (Prácticas)",
                 "company": "Informàtica Ràpita",

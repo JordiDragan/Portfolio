@@ -305,6 +305,29 @@
         "title": "Work Experience",
         "items": [
             {
+                "title": "IT Technician (CaixaBank Project)",
+                "company": "Bigmatic",
+                "employmentType": "Full-time",
+                "dates": "September 2026 - Present",
+                "location": "Tarragona, Catalonia, Spain · On-site",
+                "tasks": [
+                    "Access point (AP) renewal project at CaixaBank branches across the provinces of Tarragona and Barcelona"
+                ]
+            },
+            {
+                "title": "IT Technician",
+                "company": "Mas d'Enric Penitentiary Center",
+                "employmentType": "Full-time",
+                "dates": "August - September 2026",
+                "location": "El Catllar, Catalonia, Spain · On-site",
+                "tasks": [
+                    "Repair of video call booths for inmates",
+                    "IT support for facility staff",
+                    "Ticket management and resolution",
+                    "In-person and phone support"
+                ]
+            },
+            {
                 "title": "IT Technician (Internship)",
                 "company": "Informàtica Ràpita",
                 "dates": "June - July 2025",

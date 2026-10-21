@@ -912,10 +912,15 @@ body.is-returning-to-projects {
 }
 
 .experiencia-empresa,
+.experiencia-metadata,
 .experiencia-dates,
 .experiencia-tasks li,
 .contact-desc {
     color: var(--text-secondary);
+}
+
+.experiencia-metadata {
+    font-size: 0.9rem;
 }
 
 .experiencia-dates {
