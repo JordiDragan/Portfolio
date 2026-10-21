@@ -866,6 +866,20 @@ body.is-returning-to-projects {
     font-size: 0.9rem;
 }
 
+.timeline-link {
+    display: inline-block;
+    margin-top: 0.6rem;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 0.1rem;
+}
+
+.timeline-link:hover {
+    color: var(--accent-purple);
+}
+
 .experiencia {
     background: var(--bg-primary);
     position: relative;

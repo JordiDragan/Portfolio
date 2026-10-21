@@ -267,6 +267,7 @@ function renderEducationItem(item) {
                     <div class="timeline-title">${escapeHtml(item.title || '')}</div>
                     <div class="timeline-year">${escapeHtml(item.year || '')}</div>
                     <div class="timeline-description">${escapeHtml(item.description || '')}</div>
+                    ${item.url ? `<a class="timeline-link" href="${escapeAttribute(item.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(item.linkLabel || item.url)}</a>` : ''}
                 </div>
             </div>`;
 }
